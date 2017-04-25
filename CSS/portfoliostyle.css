@@ -1,6 +1,13 @@
-* { /* removes default spacing settings */
+
+/* Override Defaults */
+* {
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
 
 /*----- Navigation Area -------*/
@@ -43,7 +50,7 @@
     overflow: hidden;
     opacity: 1;
     animation-name: nav_list_fade_in;
-    animation-duration: 0.75s;
+    animation-duration: 1s;
     animation-timing-function: linear;
   }
 
@@ -87,6 +94,18 @@
   animation-direction: normal;
 }
 
+#portfolio_main_space_projects {
+  width: 20%;
+  height: 600px;
+  background: green;
+  color: white;
+  float: left;
+  animation-name: projects_main_in;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-direction: normal;
+}
+
 #main_white_cover {
   background: white;
   height: 600px;
@@ -102,9 +121,15 @@
     0% {width: 0%; opacity: 0%;}
     100% {width: 100%; opacity: 100%;}
   }
+
   @keyframes home_main_out {
     0% {width: 100%;}
     100% {width: 0%;}
+  }
+
+  @keyframes projects_main_in {
+    0% {width: 100%; opacity: 100%;}
+    100% {width: 20%; opacity: 100%}
   }
 
 
@@ -137,6 +162,9 @@
       0% {opacity: 0;}
       100% {opacity: 1;}
   }
+
+/*---- Contact Form ------- */
+
 
 /* for cleaning floats */
 #clear_fix {
