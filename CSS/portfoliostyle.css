@@ -27,7 +27,7 @@
     overflow: hidden;
     opacity: 1;
     animation-name: nav_list_fade_in;
-    animation-duration: 0.25s;
+    animation-duration: 2s;
     animation-timing-function: linear;
   }
 
@@ -39,7 +39,11 @@
   #nav_list_item {
     font-weight: bold;
     display: inline;
+    padding: 15px 20px;
+  }
 
+  #nav_list_item:hover {
+    background:green;
   }
 
 /* to give the R2L animation look the white cover is next
