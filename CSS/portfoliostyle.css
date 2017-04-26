@@ -1,4 +1,3 @@
-
 /* Override Defaults */
 * {
   margin: 0;
@@ -101,7 +100,7 @@ a {
   color: white;
   float: left;
   animation-name: projects_main_in;
-  animation-duration: 1s;
+  animation-duration: 0s;
   animation-timing-function: linear;
   animation-direction: normal;
 }
@@ -184,3 +183,4 @@ a {
 #clear_fix {
   clear: both;
 }
+
