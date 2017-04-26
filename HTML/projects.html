@@ -3,7 +3,36 @@
   <head>
     <title>Ken Roberts</title>
     <link rel="stylesheet" href="../CSS/portfoliostyle.css" type="text/css">
+    <script>src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script type="text/javascript">
+	
+	var anim_obj = null;
+	var animate;
+	var width_percent = '100%';
+	var nav_column_min = 20;
+	
+	function init() {
+		anim_obj = document.getElementById('portfolio_main_space_projects');
+		anim_obj.style.width = width_percent;
+		move_right()
+	}
 
+	function move_right() {
+		if (parseInt(anim_obj.style.width) > nav_column_min) {
+			var new_width = parseInt(width_percent);
+			new_width--;
+			anim_obj.style.width = new_width + '%';
+			width_percent = new_width;
+			animate = setTimeout(move_right, 2);
+		}
+		
+
+	}
+
+	window.onload =init;
+
+    </script>
+    
   </head>
   <body>
     <nav id='nav_bar' style="animation-duration:0s;">
@@ -19,10 +48,11 @@
       </div><div id='clear_fix'></div>
     </nav>
     <!-- <div id='main_white_cover'></div> -->
-    <main id='portfolio_main_space_projects' style="animation-duration:0.5s;">
-
+    <main id='portfolio_main_space_projects'>
+	
 
     </main><div id='clear_fix'></div>
     <footer id="home_footer" style="animation-duration:0s;"><div id='footer_text' style="animation-duration:0s;">copyright &copy; Ken Roberts</div></footer>
   </body>
 </html>
+
