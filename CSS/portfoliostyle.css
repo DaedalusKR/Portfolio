@@ -164,6 +164,20 @@ a {
   }
 
 /*---- Contact Form ------- */
+.contact_form {
+  
+  width: 35%;
+  border: 2px solid black;
+  align-content: center;
+}
+
+  .contact_form label {
+
+  }
+
+  .contact_form input {
+
+  }
 
 
 /* for cleaning floats */
