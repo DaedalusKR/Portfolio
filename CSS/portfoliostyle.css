@@ -13,13 +13,10 @@ a {
 #nav_bar {
   background: black;
   color: white;
-  width: 100%;
+  width: 0%;
   height: 50px;
   line-height: 50px;
   vertical-align: middle;
-  animation-name: nav_bar_in;
-  animation-duration: 0.25s;
-  animation-timing-function: linear;
 }
 
   @keyframes nav_bar_in {
@@ -82,15 +79,11 @@ a {
      to the green div using width animations 0-100/100-0
      to give the phasing in look*/
 #portfolio_main_space {
-  width: 100%;
+  width: 0%;
   height: 600px;
   background: green;
   color: white;
   float: left;
-  animation-name: home_main_in;
-  animation-duration: 0.25s;
-  animation-timing-function: linear;
-  animation-direction: normal;
 }
 
 #portfolio_main_space_projects {
@@ -108,12 +101,8 @@ a {
 #main_white_cover {
   background: white;
   height: 600px;
-  width: 0%;
+  width: 100%;
   float: left;
-  animation-name: home_main_out;
-  animation-duration: 0.25s;
-  animation-timing-function: linear;
-  animation-direction: normal;
 }
 
   @keyframes home_main_in {
@@ -128,18 +117,16 @@ a {
 
   @keyframes projects_main_in {
     0% {width: 100%; opacity: 100%;}
-    100% {width: 20%; opacity: 100%}
+    100% {width: 20%; opacity: 100%;}
   }
 
 
 /* ---- FOOTER ------*/
 #home_footer {
-  width: 100%;
+  width: 0%;
+  height: 20px;
   line-height: 15px;
   background: black;
-  animation-name: footer_in;
-  animation-duration: 0.25s;
-  animation-timing-function: linear;
 }
 
 #footer_text {
@@ -244,4 +231,3 @@ a {
 #clear_fix {
   clear: both;
 }
-
