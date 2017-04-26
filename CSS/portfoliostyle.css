@@ -164,19 +164,80 @@ a {
 
 /*---- Contact Form ------- */
 .contact_form {
-  
-  width: 35%;
+  background: green;
+  vertical-align: middle;
+  padding: 25px 50px;
+  margin: auto;
+  height: 225px;
+  width: 50%;
   border: 2px solid black;
-  align-content: center;
+  border-top: 0px;
+  text-align: center;
+  animation-name: form_drop;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
 }
 
-  .contact_form label {
-
+  @keyframes form_drop {
+	0% {height: 0px;}
+	100% {height: 225px:}
   }
 
-  .contact_form input {
-
+  .contact_form #contact_label {
+	font-size: 24px;
+	font-weight: bold;
+	animation-name: footer_text_fade_in;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-in;
   }
+
+  .contact_form #form_input_field {
+	height: 30px;
+	width: 50%;
+	outline: none;
+	text-align: center;
+	animation-name: footer_text_fade_in;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-in;
+  }
+
+  .contact_form #form_input_field {
+	height: 30px;
+	width: 75%;
+	animation-name: footer_text_fade_in;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-in;
+  }
+
+  /* placeholder text browser selector */
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    text-align: center;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    text-align: center;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    text-align: center;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    text-align: center;;
+  }
+
+
+  .contact_form input[type=submit] {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	animation-name: footer_text_fade_in;
+	animation-duration: 2s;
+	animation-timing-function: ease-in;
+  }
+
 
 
 /* for cleaning floats */
