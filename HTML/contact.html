@@ -3,6 +3,9 @@
   <head>
     <title>Ken Roberts</title>
     <link rel="stylesheet" href="../CSS/portfoliostyle.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    
+    <script src='../Scripts/page_animations.js'></script>
   </head>
   <body>
     <nav id='nav_bar_alt' style="animation-duration:0s;">
@@ -11,15 +14,15 @@
         <ul id='nav_list' style="animation-duration:0s;">
           <!-- '</li><li /n' removes spacing between li elements -->
           <a href='index.html'><li
-            id='nav_list_item'>Home</li></a><a href='projects.html'><li
-            id='nav_list_item'>Projects</li></a><a href='contact.html'><li
-            id='nav_list_item'>Contact</li></a>
+            id='nav_list_item_home'>Home</li></a><a href='projects.html'><li
+            id='nav_list_item_projects'>Projects</li></a><a href='contact.html'><li
+            id='nav_list_item_contact'>Contact</li></a>
         </ul>
       </div><div id='clear_fix'></div>
     </nav>
     
     <main id='portfolio_main_space_contact' style="animation-duration:0s;">
-      <form class='contact_form' action='' method='post' name='contact_form'>
+      <form class='contact_form' action='' method='post' name='contact_form' onsubmit='return false'>
 	<label id='contact_label'>Contact Me</label>
 	<br>
 	<br>           
