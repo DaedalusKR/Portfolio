@@ -55,13 +55,14 @@ a {
     100% {opacity: 1;}
   }
 
-  #nav_list_item {
+  #nav_list_item, #nav_list_item_home, #nav_list_item_projects, #nav_list_item_contact {
     font-weight: bold;
     display: inline;
     padding: 15px 20px;
   }
 
-  #nav_list_item:hover {
+  
+  #nav_list_item:hover, #nav_list_item_home:hover, #nav_list_item_projects:hover, #nav_list_item_contact:hover {
     background:green;
     animation-name: nav_item_hover_fade;
     animation-duration: 0.5s;
@@ -112,10 +113,18 @@ a {
 }
 
 #main_white_cover {
-  background: white;
+  background: blue;
   height: 600px;
   width: 100%;
   float: left;
+}
+
+#light_green_cover {
+  background: lightgreen;
+  height: 0px;
+  width: 100%;
+  float: left;
+
 }
 
   @keyframes home_main_in {
