@@ -1,14 +1,31 @@
 function home_anims() {
   
 	$(document).ready(function(){
+  
+	
+		var light_green_view = $('#light_green_cover');
+		
+
+		$('#nav_bar').animate({width: '100%'}, 500);
     
-		$('#nav_bar').animate({width: '100%'});
-    
-		$('#portfolio_main_space').animate({width: '100%'});
+		$('#portfolio_main_space').animate({width: '100%'}, 500);
     				
-		$('#main_white_cover').animate({width: '0%'});
+		$('#main_white_cover').animate({width: '0%'}, 500);
     
-		$('#home_footer').animate({width: '100%'});
+	
+		$('#home_footer').animate({width: '100%'}, 500);
+
+		
+		
+		$('#main_white_cover').delay(501).height('0px');
+
+
+		$('#light_green_cover').delay(1000).animate({height: '300px'});
+		
+		
+
+		
+	
   
 	});
 
@@ -23,10 +40,10 @@ function project_anims() {
 
 }
 
-function contact_anims() {
-	$(document).ready(function(){
-		
-
-	});
-
+function contact_leave_page() {
+	var current_path = window.location.pathname.split('/').pop();
+	if (current_path == 'contact.html') {
+		$('.contact_form').slideUp();
+	}
 }
+
