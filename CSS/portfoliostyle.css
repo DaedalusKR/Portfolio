@@ -19,11 +19,6 @@ a {
   vertical-align: middle;
 }
 
-  @keyframes nav_bar_in {
-      0% {width: 0%; line-height: 0px;}
-      100% {width: 100%; line-height: 50px;}
-  }
-
   #nav_logo {
     font-size: 26px;
     font-style: italic;
@@ -61,7 +56,7 @@ a {
     padding: 15px 20px;
   }
 
-  
+
   #nav_list_item:hover, #nav_list_item_home:hover, #nav_list_item_projects:hover, #nav_list_item_contact:hover {
     background:green;
     animation-name: nav_item_hover_fade;
@@ -127,22 +122,6 @@ a {
 
 }
 
-  @keyframes home_main_in {
-    0% {width: 0%; opacity: 0%;}
-    100% {width: 100%; opacity: 100%;}
-  }
-
-  @keyframes home_main_out {
-    0% {width: 100%;}
-    100% {width: 0%;}
-  }
-
-  @keyframes projects_main_in {
-    0% {width: 100%; opacity: 100%;}
-    100% {width: 20%; opacity: 100%;}
-  }
-
-
 /* ---- FOOTER ------*/
 #home_footer {
   width: 0%;
@@ -168,11 +147,6 @@ a {
   animation-timing-function: linear;
 }
 
-  @keyframes footer_in {
-      0% {width: 0%;}
-      100% {width: 100%;}
-  }
-
   @keyframes footer_text_fade_in {
       0% {opacity: 0;}
       100% {opacity: 1;}
@@ -195,34 +169,34 @@ a {
 }
 
   @keyframes form_drop {
-	0% {height: 0px;}
-	100% {height: 225px:}
+  	0% {height: 0px;}
+  	100% {height: 225px:}
   }
 
   .contact_form #contact_label {
-	font-size: 24px;
-	font-weight: bold;
-	animation-name: footer_text_fade_in;
-	animation-duration: 1.5s;
-	animation-timing-function: ease-in;
+  	font-size: 24px;
+  	font-weight: bold;
+  	animation-name: footer_text_fade_in;
+  	animation-duration: 1.5s;
+  	animation-timing-function: ease-in;
   }
 
   .contact_form #form_input_field {
-	height: 30px;
-	width: 50%;
-	outline: none;
-	text-align: center;
-	animation-name: footer_text_fade_in;
-	animation-duration: 1.5s;
-	animation-timing-function: ease-in;
+  	height: 30px;
+  	width: 50%;
+  	outline: none;
+  	text-align: center;
+  	animation-name: footer_text_fade_in;
+  	animation-duration: 1.5s;
+  	animation-timing-function: ease-in;
   }
 
   .contact_form #form_input_field {
-	height: 30px;
-	width: 75%;
-	animation-name: footer_text_fade_in;
-	animation-duration: 1.5s;
-	animation-timing-function: ease-in;
+  	height: 30px;
+  	width: 75%;
+  	animation-name: footer_text_fade_in;
+  	animation-duration: 1.5s;
+  	animation-timing-function: ease-in;
   }
 
   /* placeholder text browser selector */
@@ -239,22 +213,19 @@ a {
     text-align: center;;
   }
 
-
   .contact_form input[type=submit] {
-	background-color: #4CAF50;
-	border: none;
-	color: white;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	animation-name: footer_text_fade_in;
-	animation-duration: 2s;
-	animation-timing-function: ease-in;
+  	background-color: #4CAF50;
+  	border: none;
+  	color: white;
+  	padding: 15px 32px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+  	animation-name: footer_text_fade_in;
+  	animation-duration: 2s;
+  	animation-timing-function: ease-in;
   }
-
-
 
 /* for cleaning floats */
 #clear_fix {

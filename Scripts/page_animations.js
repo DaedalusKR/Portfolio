@@ -1,32 +1,16 @@
 function home_anims() {
-  
+
 	$(document).ready(function(){
-  
-	
+
 		var light_green_view = $('#light_green_cover');
-		
 
 		$('#nav_bar').animate({width: '100%'}, 500);
-    
 		$('#portfolio_main_space').animate({width: '100%'}, 500);
-    				
 		$('#main_white_cover').animate({width: '0%'}, 500);
-    
-	
 		$('#home_footer').animate({width: '100%'}, 500);
-
-		
-		
 		$('#main_white_cover').delay(501).height('0px');
-
-
 		$('#light_green_cover').delay(1000).animate({height: '300px'});
-		
-		
 
-		
-	
-  
 	});
 
 }
@@ -46,4 +30,3 @@ function contact_leave_page() {
 		$('.contact_form').slideUp();
 	}
 }
-
