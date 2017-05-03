@@ -88,7 +88,7 @@ a {
   height: 600px;
   background: green;
   color: white;
-  float: left;
+  float: right;
 }
 
 #portfolio_main_space_projects {
@@ -108,17 +108,17 @@ a {
 }
 
 #main_white_cover {
-  background: blue;
+  background: white;
   height: 600px;
   width: 100%;
   float: left;
 }
 
 #light_green_cover {
-  background: lightgreen;
+  background: #149332;
   height: 0px;
   width: 100%;
-  float: left;
+  
 
 }
 
