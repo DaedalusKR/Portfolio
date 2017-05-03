@@ -126,7 +126,7 @@ a {
   background: #149332;
   height: 0px;
   width: 100%;
-  
+
 
 }
 
@@ -181,11 +181,13 @@ a {
   .contact_form .contact_label {
   	font-size: 24px;
   	font-weight: bold;
+    opacity: 0;
   }
 
   .contact_form .form_input_field {
   	height: 30px;
   	width: 75%;
+    opacity: 0;
   }
 
   /* placeholder text browser selector */

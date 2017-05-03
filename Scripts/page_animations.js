@@ -1,9 +1,11 @@
+var last_url = '';
+
 function home_anims() {
 
 	$(document).ready(function(){
 
-		function home_anim_p1() { 
-			
+		var referrer =  document.referrer;
+		function home_anim_p1() {
 			$('#nav_bar').animate({width: '100%'}, 500);
 			$('#portfolio_main_space').animate({width: '100%'}, 500);
 			$('#main_white_cover').animate({width: '0%'}, 500);
@@ -16,7 +18,7 @@ function home_anims() {
 			$('#light_green_cover').delay(500).animate({height: '250px'});
 			$('#portfolio_main_space').delay(0).animate({height: '350px'});
 		}
-	
+
 		home_anim_p1();
 	});
 
@@ -32,11 +34,11 @@ function project_anims() {
 
 		function projects_anim_p2() {
 			$('#portfolio_main_space_projects_light').animate({height: '0px'}, 250);
-			$('#portfolio_main_space_projects_dark').animate({height: '600px'}, 250);		
+			$('#portfolio_main_space_projects_dark').animate({height: '600px'}, 250);
 		}
 		projects_anim_p1();
 	});
-	
+
 
 }
 
@@ -49,6 +51,8 @@ function contact_anims() {
 		$('.form_input_field').fadeIn(1000);
 		$('.contact_label').fadeIn(1000);
 		$('.form_submit').fadeIn(2000);
+		$('.form_input_field').animate({opacity: 1});
+		$('.contact_label').animate({opacity: 1});
 	});
 }
 
@@ -58,4 +62,3 @@ function contact_leave_page() {
 		$('.contact_form').slideUp();
 	}
 }
-
