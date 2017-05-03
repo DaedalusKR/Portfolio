@@ -2,15 +2,23 @@ function home_anims() {
 
 	$(document).ready(function(){
 
-		var light_green_view = $('#light_green_cover');
+		function home_anim_p1() { 
+			
+			$('#nav_bar').animate({width: '100%'}, 500);
+			$('#portfolio_main_space').animate({width: '100%'}, 500);
+			$('#main_white_cover').animate({width: '0%'}, 500);
+			$('#home_footer').animate({width: '100%'}, 500, home_anim_p2());
+		}
 
-		$('#nav_bar').animate({width: '100%'}, 500);
-		$('#portfolio_main_space').animate({width: '100%'}, 500);
-		$('#main_white_cover').animate({width: '0%'}, 500);
-		$('#home_footer').animate({width: '100%'}, 500);
-		$('#main_white_cover').delay(501).height('0px');
-		$('#light_green_cover').delay(1000).animate({height: '300px'});
 
+		function home_anim_p2() {
+			$('#main_white_cover').height('0px');
+			//$('#main_white_cover').delay(500).animate({height: '0px'});
+			$('#light_green_cover').delay(500).animate({height: '250px'});
+			$('#portfolio_main_space').delay(0).animate({height: '350px'});
+		}
+	
+		home_anim_p1();
 	});
 
 }
@@ -30,3 +38,4 @@ function contact_leave_page() {
 		$('.contact_form').slideUp();
 	}
 }
+
