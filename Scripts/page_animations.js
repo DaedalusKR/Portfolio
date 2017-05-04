@@ -1,4 +1,3 @@
-
 function home_anims() {
 	$(document).ready(function(){
 
@@ -28,10 +27,11 @@ function project_anims() {
 
 		function projects_anim_p2() {
 			$('#portfolio_main_space_projects_light').animate({height: '0px'}, 250);
-			$('#portfolio_main_space_projects_dark').animate({height: '600px'}, 250);
+			$('#portfolio_main_space_projects_dark').animate({height: '600px'}, 250, setCookie('page', 'project.html', 100));
 			$('#nav_list, #nav_logo, #footer_text').css({opacity: 1});
 		}
 		projects_anim_p1();
+		
 	});
 }
 
@@ -53,16 +53,43 @@ function contact_anims() {
 			$('.contact_label').animate({opacity: 1});
 			$('.contact_label').fadeIn(100);
 			$('.form_input_field').animate({opacity: 1});
-					$('.form_input_field').fadeIn(250);
+			$('.form_input_field').fadeIn(250);
 			$('.form_submit').fadeIn(500);
 		}
 		contact_bg_anim_ph1();
 	});
 }
 
-function contact_leave_page() {
-	var current_path = window.location.pathname.split('/').pop();
-	if (current_path == 'contact.html') {
-		$('.contact_form').slideUp();
-	}
+
+function setCookie(cname, cvalue, expdays) {
+	var d = new Date();
+	d.setTime(d.getTime() + (expdays*24*60*60*1000));
+	var expires = "expires=" + d.toUTCString();
+	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
+
+
+
+function getCookie(cname) {
+	var name = cname + "=";
+	var ca = document.cookie.split(';');
+	for (var i = 0; i < ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0) == ' ') {
+			c = c.substring(1);
+		}
+		if (c.indexOf(name) == 0) {
+			return c.substring(name.length, c.length);
+		}
+	}
+	return "";
+
+}
+
+
+function checkCookie() {
+	var last_visited = getCookie("page");
+		
+}
+
+
