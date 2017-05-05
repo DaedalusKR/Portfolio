@@ -84,14 +84,14 @@ a {
 
 #portfolio_main_space_projects_light {
   width: 100%;
-  height: 250px;
+  height: 275px;
   background: #149332;
   color: white;
 }
 
 #portfolio_main_space_projects_dark {
   width: 100%;
-  height: 350px;
+  height: 325px;
   background: green;
   color: white;
 }

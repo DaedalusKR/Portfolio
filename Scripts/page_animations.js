@@ -1,18 +1,34 @@
 function home_anims() {
 	$(document).ready(function(){
+			// checks if page vistied during session and sets animation based on last view
+		var last_visited = checkCookie();
 
 		function home_anim_p1() {
+			if (last_visited == ' ') {
 				$('#nav_bar').animate({width: '100%'}, 500);
 				$('#portfolio_main_space').animate({width: '100%'}, 500);
 				$('#main_white_cover').animate({width: '0%'}, 500);
 				$('#home_footer').animate({width: '100%'}, 500, home_anim_p2());
+			} else {
+				 $('#nav_bar').css('width', '100%');
+				 $('#portfolio_main_space').animate({width: '100%'}, 500);
+				 $('#main_white_cover').animate({width: '0%'}, 500, home_anim_p2());
+				 $('#home_footer').css('width', '100%');
+			}
 		}
 
 		function home_anim_p2() {
-			$('#main_white_cover').height('0px');
-			$('#light_green_cover').delay(500).animate({height: '275px'});
-			$('#portfolio_main_space').delay(0).animate({height: '325px'});
-			$('#nav_list, #nav_logo, #footer_text').hide().fadeIn(500).animate({opacity: 1}, setCookie('page', 'index.html'));
+			if (last_visited == ' ') {
+				$('#main_white_cover').height('0px');
+				$('#light_green_cover').delay(500).animate({height: '275px'});
+				$('#portfolio_main_space').delay(0).animate({height: '325px'});
+				$('#nav_list, #nav_logo, #footer_text').hide().fadeIn(500).animate({opacity: 1}, setCookie('page', 'index.html'));
+			} else {
+				$('#main_white_cover').height('0px');
+				$('#light_green_cover').delay(500).animate({height: '275px'});
+				$('#portfolio_main_space').delay(0).animate({height: '325px'}, setCookie('page', 'index.html'));
+				$('#nav_list, #nav_logo, #footer_text').css('opacity', '1');
+			}
 		}
 		home_anim_p1();
 	});
@@ -68,7 +84,10 @@ function contact_anims() {
 
 
 function setCookie(cname, cvalue) {
-	document.cookie = cname + "=" + cvalue + ";path=/";
+	var d = new Date();
+	d.setTime(d.getTime() + 5000);
+	var expires = "expires=" + d.toUTCString();
+	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
 function getCookie(cname) {
