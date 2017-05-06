@@ -119,6 +119,30 @@ a {
   color: white;
 }
 
+#name_area {
+  position: absolute;
+  top: 20%;
+  left: 38%;
+  height: 50px;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: arial;
+  text-align: center;
+  color: white;
+}
+
+#role_area {
+  position: absolute;
+  top: 30%;
+  left: 42%;
+  height: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: arial;
+  text-align: center;
+  color: white;
+}
+
 #portfolio_main_space_projects_dark {
   width: 100%;
   height: 325px;

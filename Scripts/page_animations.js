@@ -28,8 +28,37 @@ function home_anims() {
 				$('#light_green_cover').delay(500).animate({height: '275px'});
 				$('#portfolio_main_space').delay(0).animate({height: '325px'}, setCookie('page', 'index.html'));
 				$('#nav_list, #nav_logo, #footer_text').css('opacity', '1');
+				setTimeout(function() {home_anim_p3()}, 1250);
+				setTimeout(function() {home_anim_p4()}, 2000);
 			}
 		}
+
+		function type_writer_effect_name(text, n) {
+			if (n < (text.length)) {
+				$('#name_area').html(text.substring(0, n+1));
+				n++;
+				setTimeout(function() {type_writer_effect_name(text, n)}, 50);
+			}
+		}
+
+		function type_writer_effect_role(text, n) {
+			if (n < (text.length)) {
+				$('#role_area').html(text.substring(0, n+1));
+				n++;
+				setTimeout(function() {type_writer_effect_role(text, n)}, 50);
+			}
+		}
+
+		function home_anim_p3() {
+			var name = $('#name_area').data('text');
+			type_writer_effect_name(name, 0);
+		}
+
+		function home_anim_p4() {
+			var role = $('#role_area').data('text');
+			type_writer_effect_role(role, 0);
+		}
+
 		home_anim_p1();
 	});
 }
