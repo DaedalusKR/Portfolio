@@ -92,13 +92,14 @@ a {
     }
 
     #nav_proj_side_item {
+      padding: 2px 2px 2px 2px;
       font-family: arial;
       text-align: center;
       font-size: 12px;
     }
 
       #nav_proj_side_a:hover {
-        text-shadow: 3px 3px 10px white;
+        text-shadow: 0px 0px 10px white;
       }
 
 /* ---- Main Space ------*/
