@@ -33,22 +33,6 @@ function home_anims() {
 			}
 		}
 
-		function type_writer_effect_name(text, n) {
-			if (n < (text.length)) {
-				$('#name_area').html(text.substring(0, n+1));
-				n++;
-				setTimeout(function() {type_writer_effect_name(text, n)}, 50);
-			}
-		}
-
-		function type_writer_effect_role(text, n) {
-			if (n < (text.length)) {
-				$('#role_area').html(text.substring(0, n+1));
-				n++;
-				setTimeout(function() {type_writer_effect_role(text, n)}, 50);
-			}
-		}
-
 		function home_anim_p3() {
 			var name = $('#name_area').data('text');
 			type_writer_effect_name(name, 0);
@@ -121,31 +105,31 @@ function contact_anims() {
 		contact_bg_anim_ph1();
 	});
 }
-
-
-function setCookie(cname, cvalue) {
-	var d = new Date();
-	d.setTime(d.getTime() + 5000);
-	var expires = "expires=" + d.toUTCString();
-	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-	var name = cname + "=";
-	var ca = document.cookie.split(';');
-	for (var i = 0; i < ca.length; i++) {
-		var c = ca[i];
-		while (c.charAt(0) == ' ') {
-			c = c.substring(1);
-		}
-		if (c.indexOf(name) == 0) {
-			return c.substring(name.length, c.length);
-		}
-	}
-	return "";
-}
-
-function checkCookie() {
-	var last_visited = getCookie("page");
-	return last_visited;
-}
+// 
+//
+// function setCookie(cname, cvalue) {
+// 	var d = new Date();
+// 	d.setTime(d.getTime() + 5000);
+// 	var expires = "expires=" + d.toUTCString();
+// 	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+// }
+//
+// function getCookie(cname) {
+// 	var name = cname + "=";
+// 	var ca = document.cookie.split(';');
+// 	for (var i = 0; i < ca.length; i++) {
+// 		var c = ca[i];
+// 		while (c.charAt(0) == ' ') {
+// 			c = c.substring(1);
+// 		}
+// 		if (c.indexOf(name) == 0) {
+// 			return c.substring(name.length, c.length);
+// 		}
+// 	}
+// 	return "";
+// }
+//
+// function checkCookie() {
+// 	var last_visited = getCookie("page");
+// 	return last_visited;
+// }

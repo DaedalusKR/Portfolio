@@ -1,8 +1,6 @@
-/
-function setCookie(cname, cvalue, expdays) {
-	alert('in set cookie');
+function setCookie(cname, cvalue) {
 	var d = new Date();
-	d.setTime(d.getTime() + (expdays*24*60*60*1000));
+	d.setTime(d.getTime() + 5000);
 	var expires = "expires=" + d.toUTCString();
 	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
@@ -12,7 +10,7 @@ function getCookie(cname) {
 	var ca = document.cookie.split(';');
 	for (var i = 0; i < ca.length; i++) {
 		var c = ca[i];
-		while c.charAt(0) == ' ') {
+		while (c.charAt(0) == ' ') {
 			c = c.substring(1);
 		}
 		if (c.indexOf(name) == 0) {
@@ -20,10 +18,9 @@ function getCookie(cname) {
 		}
 	}
 	return "";
-
 }
 
 function checkCookie() {
 	var last_visited = getCookie("page");
-		
+	return last_visited;
 }
