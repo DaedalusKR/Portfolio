@@ -9,6 +9,8 @@ a {
   text-decoration: none;
 }
 
+
+
 /*----- Navigation Main Area -------*/
 #nav_bar {
   background: black;
@@ -119,29 +121,69 @@ a {
   color: white;
 }
 
-#name_area {
-  position: absolute;
-  top: 20%;
-  left: 38%;
-  height: 50px;
-  font-size: 40px;
-  font-weight: bold;
-  font-family: arial;
-  text-align: center;
-  color: white;
-}
+  #name_area {
+    position: absolute;
+    top: 20%;
+    left: 34%;
+    height: 50px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: arial;
+    text-align: center;
+    color: white;
+  }
 
-#role_area {
-  position: absolute;
-  top: 30%;
-  left: 42%;
-  height: 50px;
-  font-size: 24px;
-  font-weight: bold;
-  font-family: arial;
-  text-align: center;
-  color: white;
-}
+  #role_area {
+    position: absolute;
+    top: 30%;
+    left: 39%;
+    height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: arial;
+    text-align: center;
+    color: white;
+  }
+
+  .article_headings {
+    text-align: center;
+    font-family: arial;
+    font-size: 16px;
+    margin: 10px;
+    opacity: 0;
+  }
+
+  .article_text {
+    font-family: arial;
+    font-size: 14px;
+    margin-left: 20px;
+    margin-right: 10px;
+    opacity: 0;
+  }
+
+  #about_me {
+    width: 35%;
+    height: 1px;
+    float: left;
+  }
+
+  #contact_box {
+    width: 30%;
+    height: 325px;
+    float: left;
+  }
+
+  #logo_spacer {
+    width: 40%;
+    float:left;
+  }
+
+  #skills {
+    width: 35%;
+    height: 325px;
+    float: left;
+    text-align: center;
+  }
 
 #portfolio_main_space_projects_dark {
   width: 100%;
@@ -170,6 +212,8 @@ a {
   height: 0px;
   width: 100%;
 }
+
+
 
 /* ---- FOOTER ------*/
 #home_footer {

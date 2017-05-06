@@ -57,6 +57,13 @@ function home_anims() {
 		function home_anim_p4() {
 			var role = $('#role_area').data('text');
 			type_writer_effect_role(role, 0);
+			setTimeout(home_anim_p5());
+		}
+
+		function home_anim_p5() {
+			$('#about_me').animate({height: '325px'});
+			$('.article_headings').delay(750).animate({opacity: '1'}, 1000);
+			$('.article_text').delay(750).animate({opacity: '1'}, 1000);
 		}
 
 		home_anim_p1();
