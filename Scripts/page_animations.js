@@ -43,8 +43,12 @@ function project_anims() {
 
 		function projects_anim_p2() {
 			$('#portfolio_main_space_projects_light').animate({height: '0px'}, 250);
-			$('#portfolio_main_space_projects_dark').animate({height: '600px'}, 250, setCookie('page', 'project.html'));
+			$('#portfolio_main_space_projects_dark').animate({height: '600px'}, 250, setCookie('page', 'project.html'), projects_anim_p3());
 			$('#nav_list, #nav_logo, #footer_text').css({opacity: 1});
+		}
+
+		function projects_anim_p3() {
+			$('#nav_proj_side_container').delay(750).animate({opacity: '1'}, 750);
 		}
 		projects_anim_p1();
 	});
