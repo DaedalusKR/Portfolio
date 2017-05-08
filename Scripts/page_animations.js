@@ -69,6 +69,7 @@ function project_anims() {
 
 		function projects_anim_p3() {
 			$('#nav_proj_side_container').delay(750).animate({opacity: '1'}, 750);
+			$('#project_content_view_spacer').delay(750).animate({width: '80%'}, 0);
 		}
 		projects_anim_p1();
 	});
@@ -105,31 +106,19 @@ function contact_anims() {
 		contact_bg_anim_ph1();
 	});
 }
-// 
-//
-// function setCookie(cname, cvalue) {
-// 	var d = new Date();
-// 	d.setTime(d.getTime() + 5000);
-// 	var expires = "expires=" + d.toUTCString();
-// 	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-// }
-//
-// function getCookie(cname) {
-// 	var name = cname + "=";
-// 	var ca = document.cookie.split(';');
-// 	for (var i = 0; i < ca.length; i++) {
-// 		var c = ca[i];
-// 		while (c.charAt(0) == ' ') {
-// 			c = c.substring(1);
-// 		}
-// 		if (c.indexOf(name) == 0) {
-// 			return c.substring(name.length, c.length);
-// 		}
-// 	}
-// 	return "";
-// }
-//
-// function checkCookie() {
-// 	var last_visited = getCookie("page");
-// 	return last_visited;
-// }
+
+$(document).on('click', '#nav_proj_side_a', function() {
+	$('#project_content_view_spacer').animate({width: '0%'});
+	$('#project_content_view').css('height', '600px');
+	$('#project_content_view').animate({width: '80%'});
+	getContentPage($(this).text());
+});
+
+function getContentPage(link_clicked) {
+	var content_section_reference = getElementById('project_content_view');
+	content_section_reference.innerHTML = ('<b>hello world</b>');
+}
+
+function generate_portfolio_content_view() {
+
+}

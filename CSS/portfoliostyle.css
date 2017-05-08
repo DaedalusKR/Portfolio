@@ -102,6 +102,8 @@ a {
         text-shadow: 0px 0px 10px white;
       }
 
+
+
 /* ---- Main Space ------*/
 
   /* to give the R2L animation look the white cover is next
@@ -191,6 +193,21 @@ a {
   height: 325px;
   background: green;
   color: white;
+  float: left;
+}
+
+#project_content_view {
+  background: #149332;
+  width: 0%;
+  height: 1px;
+  float: left;
+}
+
+#project_content_view_spacer {
+  background: white;
+  width: 0%;
+  height: 1px;
+  float: left;
 }
 
 #portfolio_main_space_contact {
