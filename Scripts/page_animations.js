@@ -115,8 +115,32 @@ $(document).on('click', '#nav_proj_side_a', function() {
 });
 
 function getContentPage(link_clicked) {
-	var content_section_reference = getElementById('project_content_view');
-	content_section_reference.innerHTML = ('<b>hello world</b>');
+	// var content_section_reference = getElementById('project_content_view');
+	// content_section_reference.innerHTML = ('<b>hello world</b>');
+	switch (link_clicked) {
+		case 'My Portfolio':
+			$('#project_content_view').load('Projects/myportfolio.html');
+			break;
+		case 'Blog':
+			$('#project_content_view').load('Projects/blog.html');
+			break;
+		case 'Web Progger':
+			$('#project_content_view').load('Projects/webprogger.html');
+			break;
+		case 'Wedding':
+			$('#project_content_view').load('Projects/wedding.html');
+			break;
+		case 'Photo Browser':
+			$('#project_content_view').load('Projects/photobrowser.html');
+			break;
+		default:
+			document.getElementById('project_content_view').innerHTML = '<b>ERROR - Contact <a href="mailto:kr26633z@gmail.com?Subject=Web%20Page%20Issue target="_top">Web Admin</a></b>';
+		break;
+
+	}
+
+
+	//document.getElementById('project_content_view').innerHTML = '<b>hello world</b>';
 }
 
 function generate_portfolio_content_view() {
