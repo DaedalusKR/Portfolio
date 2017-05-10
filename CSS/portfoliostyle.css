@@ -1,4 +1,3 @@
-
 /* Override Defaults */
 * {
   margin: 0;
@@ -10,32 +9,23 @@ a {
   text-decoration: none;
 }
 
-/*----- Navigation Area -------*/
+
+
+/*----- Navigation Main Area -------*/
 #nav_bar {
   background: black;
   color: white;
-  width: 100%;
+  width: 0%;
   height: 50px;
   line-height: 50px;
   vertical-align: middle;
-  animation-name: nav_bar_in;
-  animation-duration: 0.25s;
-  animation-timing-function: linear;
 }
-
-  @keyframes nav_bar_in {
-      0% {width: 0%; line-height: 0px;}
-      100% {width: 100%; line-height: 50px;}
-  }
 
   #nav_logo {
     font-size: 26px;
     font-style: italic;
     padding: 0px 10px;
     opacity: 1;
-    animation-name: nav_list_fade_in;
-    animation-duration: 1.5s;
-    animation-timing-function: linear;
     float: left;
   }
 
@@ -48,24 +38,19 @@ a {
     list-style: none;
     text-align: right;
     overflow: hidden;
-    opacity: 1;
+    opacity: 0;
     animation-name: nav_list_fade_in;
     animation-duration: 1s;
     animation-timing-function: linear;
   }
 
-  @keyframes nav_list_fade_in {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-  }
-
-  #nav_list_item {
+  #nav_list_item, #nav_list_item_home, #nav_list_item_projects, #nav_list_item_contact {
     font-weight: bold;
     display: inline;
     padding: 15px 20px;
   }
 
-  #nav_list_item:hover {
+  #nav_list_item:hover, #nav_list_item_home:hover, #nav_list_item_projects:hover, #nav_list_item_contact:hover {
     background:green;
     animation-name: nav_item_hover_fade;
     animation-duration: 0.5s;
@@ -77,70 +62,190 @@ a {
     100% {background: green;}
   }
 
+#nav_bar_alt {
+  background: black;
+  color: white;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+}
+
+/* ---- Navigation Side ----- */
+
+#nav_proj_side {
+  padding: 30px 5px;
+}
+
+  #nav_proj_side_container {
+    list-style: none;
+    padding: 0 10px;
+    opacity: 0;
+  }
+
+    #nav_proj_side_title {
+      font-family: arial;
+      font-weight: bold;
+      text-align: center;
+      font-size: 15px;
+      padding-bottom: 5px;
+    }
+
+    #nav_proj_side_item {
+      padding: 2px 2px 2px 2px;
+      font-family: arial;
+      text-align: center;
+      font-size: 12px;
+    }
+
+      #nav_proj_side_a:hover {
+        text-shadow: 0px 0px 10px white;
+      }
+
+
+
 /* ---- Main Space ------*/
 
   /* to give the R2L animation look the white cover is next
      to the green div using width animations 0-100/100-0
      to give the phasing in look*/
 #portfolio_main_space {
+  width: 0%;
+  height: 600px;
+  background: green;
+  color: white;
+  float: right;
+}
+
+#portfolio_main_space_projects_light {
+  width: 100%;
+  height: 275px;
+  background: #149332;
+  color: white;
+}
+
+  #name_area {
+    position: absolute;
+    top: 20%;
+    left: 34%;
+    height: 50px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: arial;
+    text-align: center;
+    color: white;
+  }
+
+  #role_area {
+    position: absolute;
+    top: 30%;
+    left: 39%;
+    height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: arial;
+    text-align: center;
+    color: white;
+  }
+
+  .article_headings {
+    text-align: center;
+    font-family: arial;
+    font-size: 16px;
+    margin: 10px;
+    opacity: 0;
+  }
+
+  .article_text {
+    font-family: arial;
+    font-size: 14px;
+    margin-left: 20px;
+    margin-right: 10px;
+    opacity: 0;
+  }
+
+  #about_me {
+    width: 35%;
+    height: 1px;
+    float: left;
+  }
+
+  #contact_box {
+    width: 30%;
+    height: 325px;
+    float: left;
+  }
+
+  #logo_spacer {
+    width: 40%;
+    float:left;
+  }
+
+  #skills {
+    width: 35%;
+    height: 325px;
+    float: left;
+    text-align: center;
+  }
+
+#portfolio_main_space_projects_dark {
+  width: 100%;
+  height: 325px;
+  background: green;
+  color: white;
+  float: left;
+}
+
+#project_content_view {
+  background: #149332;
+  width: 0%;
+  height: 1px;
+  float: left;
+}
+
+#project_content_view_spacer {
+  background: white;
+  width: 0%;
+  height: 1px;
+  float: left;
+}
+
+#portfolio_main_space_contact {
   width: 100%;
   height: 600px;
   background: green;
   color: white;
   float: left;
-  animation-name: home_main_in;
-  animation-duration: 0.25s;
-  animation-timing-function: linear;
-  animation-direction: normal;
-}
-
-#portfolio_main_space_projects {
-  width: 20%;
-  height: 600px;
-  background: green;
-  color: white;
-  float: left;
-  animation-name: projects_main_in;
-  animation-duration: 1s;
-  animation-timing-function: linear;
-  animation-direction: normal;
 }
 
 #main_white_cover {
   background: white;
   height: 600px;
-  width: 0%;
+  width: 100%;
   float: left;
-  animation-name: home_main_out;
-  animation-duration: 0.25s;
-  animation-timing-function: linear;
-  animation-direction: normal;
 }
 
-  @keyframes home_main_in {
-    0% {width: 0%; opacity: 0%;}
-    100% {width: 100%; opacity: 100%;}
-  }
+#light_green_cover {
+  background: #149332;
+  height: 0px;
+  width: 100%;
+}
 
-  @keyframes home_main_out {
-    0% {width: 100%;}
-    100% {width: 0%;}
-  }
-
-  @keyframes projects_main_in {
-    0% {width: 100%; opacity: 100%;}
-    100% {width: 20%; opacity: 100%}
-  }
 
 
 /* ---- FOOTER ------*/
 #home_footer {
-  width: 100%;
+  width: 0%;
+  height: 20px;
   line-height: 15px;
   background: black;
-  animation-name: footer_in;
-  animation-duration: 0.25s;
-  animation-timing-function: linear;
+}
+
+#footer_alt {
+  width: 100%;
+  height: 20px;
+  line-height: 15px;
+  background: black;
 }
 
 #footer_text {
@@ -153,32 +258,56 @@ a {
   animation-timing-function: linear;
 }
 
-  @keyframes footer_in {
-      0% {width: 0%;}
-      100% {width: 100%;}
-  }
-
-  @keyframes footer_text_fade_in {
-      0% {opacity: 0;}
-      100% {opacity: 1;}
-  }
 
 /*---- Contact Form ------- */
 .contact_form {
-  
-  width: 35%;
+  background: green;
+  vertical-align: middle;
+  padding: 25px 50px;
+  margin: auto;
+  height: 0px;
+  width: 50%;
   border: 2px solid black;
-  align-content: center;
+  border-top: 0px;
+  text-align: center;
 }
 
-  .contact_form label {
-
+  .contact_form .contact_label {
+  	font-size: 24px;
+  	font-weight: bold;
+    opacity: 0;
   }
 
-  .contact_form input {
-
+  .contact_form .form_input_field {
+  	height: 30px;
+  	width: 75%;
+    opacity: 0;
   }
 
+  /* placeholder text browser selector */
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    text-align: center;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    text-align: center;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    text-align: center;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    text-align: center;;
+  }
+
+  .form_submit {
+  	background-color: #4CAF50;
+  	border: none;
+  	color: white;
+  	padding: 15px 32px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+  }
 
 /* for cleaning floats */
 #clear_fix {

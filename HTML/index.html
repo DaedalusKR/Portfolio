@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Ken Roberts</title>
     <link rel="stylesheet" href="../CSS/portfoliostyle.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src='../Scripts/cookie.js'></script>
+    <script src='../Scripts/texttype.js'></script>
+    <script src='../Scripts/page_animations.js'></script>
+    <script>
+        home_anims();
+    </script>
   </head>
+
   <body>
     <nav id='nav_bar'>
       <div id='nav_logo'>KR</div>
@@ -11,17 +20,56 @@
         <ul id='nav_list'>
           <!-- '</li><li /n' removes spacing between li elements -->
           <a href='index.html'><li
-            id='nav_list_item'>Home</li></a><a href='projects.html'><li
-            id='nav_list_item'>Projects</li></a><a href='contact.html'><li
-            id='nav_list_item'>Contact</li></a>
+            id='nav_list_item_home'>Home</li></a><a href='projects.html'><li
+            id='nav_list_item_projects'>Projects</li></a><a href='contact.html'><li
+            id='nav_list_item_contact'>Contact</li></a>
         </ul>
       </div><div id='clear_fix'></div>
     </nav>
+    <div id='light_green_cover'>
+      <div id='name_area' data-text='Ken Roberts'></div>
+      <div id='role_area' data-text='Web Developer'></div>
+    </div>
     <div id='main_white_cover'></div>
-    <main id='portfolio_main_space'>
+    <div id='portfolio_main_space'>
+      <article id='about_me'>
+        <h2 class='article_headings'>About Me</h2>
+        <div class='article_text'>
+          Some text about me
+        </div>
+      </article>
+      <article id='contact_box'>
+        <h2 class='article_headings'>&nbsp;</h2>
+        <div class='article_text'>
+          <br><br>
+          <div id='logo_spacer'>&nbsp;</div>
+          <a href='https://github.com/DaedalusKR' target='_blank'><img src='../Resources/github.png' height="30px" width="30px" align="middle"></a>
+            <br><br>
+          <div id='logo_spacer'>&nbsp;</div>
+          <a href='#' target='_blank'><img src='../Resources/facebook.png' height="30px" width="30px" align="middle"></a>
+            <br><br>
+          <div id='logo_spacer'>&nbsp;</div>
+          <a href='#' target='_blank'><img src='../Resources/twitter.png' height="40px" width="40px" align="middle"></a>
+            <br><br>
+          <div id='logo_spacer'>&nbsp;</div>
+          <a href='#' target='_blank'><img src='../Resources/youtube.png' height="30px" width="30px" align="middle"></a>
+        </div>
+      </article>
+      <article id='skills'>
+        <h2 class='article_headings'>Skills and Expertise</h2>
+        <div class='article_text'>
+          <ul style="list-style: none;">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>JQuery</li>
+            <li>Objective-C</li>
+          </ul>
+        </div>
+      </article>
 
-
-    </main><div id='clear_fix'></div>
+    </div>
+    <div id='clear_fix'></div>
     <footer id="home_footer"><div id='footer_text'>copyright &copy; Ken Roberts</div></footer>
   </body>
 </html>

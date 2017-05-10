@@ -3,26 +3,50 @@
   <head>
     <title>Ken Roberts</title>
     <link rel="stylesheet" href="../CSS/portfoliostyle.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src='../Scripts/cookie.js'></script>
+    <script src='../Scripts/page_animations.js'></script>
+
+    <script>
+	project_anims();
+    </script>
 
   </head>
   <body>
-    <nav id='nav_bar' style="animation-duration:0s;">
+    <nav id='nav_bar_alt' style="animation-duration:0s;">
       <div id='nav_logo' style="animation-duration:0s;">KR</div>
       <div id='nav_list_container'>
         <ul id='nav_list' style="animation-duration:0s;">
           <!-- '</li><li /n' removes spacing between li elements -->
           <a href='index.html'><li
-            id='nav_list_item'>Home</li></a><a href='projects.html'><li
-            id='nav_list_item'>Projects</li></a><a href='contact.html'><li
-            id='nav_list_item'>Contact</li></a>
+            id='nav_list_item_home'>Home</li></a><a href='projects.html'><li
+            id='nav_list_item_projects'>Projects</li></a><a href='contact.html'><li
+            id='nav_list_item_contact'>Contact</li></a>
         </ul>
       </div><div id='clear_fix'></div>
     </nav>
-    <!-- <div id='main_white_cover'></div> -->
-    <main id='portfolio_main_space_projects' style="animation-duration:0.5s;">
-
-
-    </main><div id='clear_fix'></div>
-    <footer id="home_footer" style="animation-duration:0s;"><div id='footer_text' style="animation-duration:0s;">copyright &copy; Ken Roberts</div></footer>
+    <div>
+    	<!-- <div id='main_white_cover'></div> -->
+    	<div id='portfolio_main_space_projects_light'></div>
+    	<div id='portfolio_main_space_projects_dark'>
+        <nav id='nav_proj_side'>
+          <ul id='nav_proj_side_container'>
+            <h1 id='nav_proj_side_title'>Websites</h1>
+            <a href='#' id='nav_proj_side_a'><li id='nav_proj_side_item'>My Portfolio</li></a>
+            <a href='#' id='nav_proj_side_a'><li id='nav_proj_side_item'>Blog</li></a>
+            <a href='#' id='nav_proj_side_a'><li id='nav_proj_side_item'>Web Progger</li></a>
+            <a href='#' id='nav_proj_side_a'><li id='nav_proj_side_item'>Wedding</li></a>
+            <a href='#' id='nav_proj_side_a'><li id='nav_proj_side_item'>Photo Browser</li></a>
+            <br>
+            <h1 id='nav_proj_side_title'>Software</h1>
+            <a href='#' id='nav_proj_side_a'><li id='nav_proj_side_item'>TimeLog</li></a>
+            <a href='#' id='nav_proj_side_a'><li id='nav_proj_side_item'>DriveSpy</li></a>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div id='project_content_view_spacer'>&nbsp;</div>
+    <div id='project_content_view'>&nbsp;></div><div id='clear_fix'></div>
+    <footer id="footer_alt"><div id='footer_text' style="animation-duration:0s;">copyright &copy; Ken Roberts</div></footer>
   </body>
 </html>

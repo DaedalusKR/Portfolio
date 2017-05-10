@@ -3,36 +3,39 @@
   <head>
     <title>Ken Roberts</title>
     <link rel="stylesheet" href="../CSS/portfoliostyle.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src='../Scripts/cookie.js'></script>
+    <script src='../Scripts/page_animations.js'></script>
+    <script>
+	contact_anims();
+    </script>
   </head>
   <body>
-    <nav id='nav_bar' style="animation-duration:0s;">
+    <nav id='nav_bar_alt'>
       <div id='nav_logo' style="animation-duration:0s;">KR</div>
-      <div id='nav_list_container' style="animation-duration:0s;">
+      <div id='nav_list_container'>
         <ul id='nav_list' style="animation-duration:0s;">
           <!-- '</li><li /n' removes spacing between li elements -->
           <a href='index.html'><li
-            id='nav_list_item'>Home</li></a><a href='projects.html'><li
-            id='nav_list_item'>Projects</li></a><a href='contact.html'><li
-            id='nav_list_item'>Contact</li></a>
+            id='nav_list_item_home'>Home</li></a><a href='projects.html'><li
+            id='nav_list_item_projects'>Projects</li></a><a href='contact.html'><li
+            id='nav_list_item_contact'>Contact</li></a>
         </ul>
       </div><div id='clear_fix'></div>
     </nav>
-    <div id='main_white_cover' style="animation-duration:0s;"></div>
-    <main id='portfolio_main_space' style="animation-duration:0s;">
-      <form class='contact_form' action='' method='post' name='contact_form'>
-        <label>Your Name:</label>
-        <br>
-        <input type='text'>
-        <br>
-        <label>Email Address:</label>
-        <br>
-        <input type='email'>
-        <br><br>
-        <input type='submit'>
-      </form>
 
-
+    <main id='portfolio_main_space_contact'>
+      <div id='main_white_cover'></div>
+      <div id='light_green_cover'>
+        <form class='contact_form' action='' method='post' name='contact_form' onsubmit='return false'>
+        	<label class='contact_label'>Contact Me</label><br><br>
+        	<input class='form_input_field' type='text' placeholder='Your Name'><br><br>
+          <input class='form_input_field' type='email'placeholder = 'Your E-mail'><br><br><br>
+          <input class='form_submit' type='submit' value='Submit'>
+        </form>
+      </div>
     </main><div id='clear_fix'></div>
-    <footer id="home_footer" style="animation-duration:0s;"><div id='footer_text' style="animation-duration:0s;">copyright &copy; Ken Roberts</div></footer>
+
+    <footer id="footer_alt"><div id='footer_text' style="animation-duration:0s;">copyright &copy; Ken Roberts</div></footer>
   </body>
 </html>
