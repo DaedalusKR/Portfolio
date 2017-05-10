@@ -34,13 +34,48 @@
   #project_git_link {
     vertical-align: middle;
   }
-
 </style>
+<script>
+  var image_array = [];
+  var spinner_counter = 0;
+  image_array[0] = new Image(200, 250);
+  image_array[0].src = '../../Resources/Screenshots/Portfolio/portfolio_home.png';
+  image_array[1] = new Image(200, 250);
+  image_array[1].src = '../../Resources/Screenshots/Portfolio/portfolio_projects.png';
+  image_array[2] = new Image(200, 250);
+  image_array[2].src = '../../Resources/Screenshots/Portfolio/portfolio_contact.png';
+
+  var current_image = image_array[spinner_counter];
+  var image_holding_element = document.getElememtById('image_container');
+  document.getElememtById('image_container').innerHTML = '<b>test</b>';
+  set_image(image_holding_element, image_array, spinner_counter);
+
+
+  function  set_image(image_holding_element, image_array, spinner_counter) {
+      image_holding_element.innerHTML = image_array[spinner_counter];
+  }
+
+  function right_image_button_clicked() {
+    if (spinner_counter == 3) {
+      spinner_counter = 1;
+    } else {
+      spinner_counter++;
+    }
+    set_image(image_holding_element, image_array, spinner_counter);
+  }
+
+
+
+</script>
 <div id='project_content_view_container'>
   <div id='project_content_view_title'>My Portfolio</div>
     <br>
   <div id='project_content_view_screens'>
-    <img src='../Resources/Screenshots/Portfolio/portfolio_home.png' height="100px" width="150px">
+    <div id='image-spinner'>
+      <button>Left</button>
+      <div id='image_container'><img height="200" width="250"></div>
+      <button onclick="right_image_button_clicked();">Right</button>
+    </div>
   <div>
     <br>
   <div id='project_content_view_desc'>
