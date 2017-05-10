@@ -118,7 +118,7 @@ function getContentPage(link_clicked) {
 
 	switch (link_clicked) {
 		case 'My Portfolio':
-			$('#project_content_view').load('Projects/myportfolio.html').hide().slideDown(100);
+			$('#project_content_view').load('Projects/myportfolio.html').hide().slideDown(400);
 			break;
 		case 'Blog':
 			$('#project_content_view').load('Projects/blog.html').hide().slideDown(100);

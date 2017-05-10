@@ -151,27 +151,28 @@ a {
   .article_headings {
     text-align: center;
     font-family: arial;
-    font-size: 16px;
+    font-size: 14px;
     margin: 10px;
     opacity: 0;
   }
 
   .article_text {
     font-family: arial;
-    font-size: 14px;
-    margin-left: 20px;
+    text-align: center;
+    font-size: 12px;
+    margin-left: 10px;
     margin-right: 10px;
     opacity: 0;
   }
 
   #about_me {
-    width: 35%;
+    width: 40%;
     height: 1px;
     float: left;
   }
 
   #contact_box {
-    width: 30%;
+    width: 20%;
     height: 325px;
     float: left;
   }

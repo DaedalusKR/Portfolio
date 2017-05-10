@@ -3,6 +3,7 @@
     color: white;
     background: #149332;
     margin: 25px;
+    font-family: arial;
   }
 
   #project_content_view_title {
@@ -14,8 +15,8 @@
 
   }
 
-  #project_content_view_description {
-
+  #project_content_view_desc {
+    font-size: 12px;
   }
 
   #project_content_view_screens {
@@ -23,21 +24,53 @@
   }
 
   #project_content_view_gitlink {
-
+    font-size: 12px;
   }
 
   #project_content_view_feedback {
-
+    font-size: 12px;
   }
+
+  #project_git_link {
+    vertical-align: middle;
+  }
+
 </style>
 <div id='project_content_view_container'>
   <div id='project_content_view_title'>My Portfolio</div>
     <br>
-  <div id='project_content_view_screens'>[Picture Gallery Spinner]<div>
+  <div id='project_content_view_screens'>
+    <img src='../Resources/Screenshots/Portfolio/portfolio_home.png' height="100px" width="150px">
+  <div>
     <br>
-  <div id='project_content_view_desc'>[DESCRIPTION]</div>
+  <div id='project_content_view_desc'>
+    <p>My portfolio site is written in HTML5 and uses CSS for styling and a mix
+      of JavaScript and JQuery to power the animations on the pages.
+    </p><br>
+    <p>The idea of this site is to demonstrate my work and progress as a developer
+      as well as being a bit of a sandbox for applying new techniques and ideas
+      I'm learning.
+    </p><br>
+    <p>The projects page is a collection of projects I've worked on. My design
+      philopsophy as been that pages shoudl be quick and interactive like an app.
+      Using JavaScript and JQuery this page generates content based on the link
+      the vistor selects.
+    </p><br>
+    <p>At the moment I'm working on adding content to the page and improving
+      some of the animations - such as different versions of animation depending
+      on the last page viewed in order to have a more app-like look and feel.
+    </p><br>
+    <p>If you'd like to check out my source below.</p>
+    </div>
     <br>
-  <div id='project_content_view_gitlink'>[Git Hub Link]</div>
+  <div id='project_content_view_gitlink'>
+    <div>
+      <a href='https://github.com/DaedalusKR/Portfolio' target='_blank'>
+        <img id='project_git_link' src="../Resources/github.png" height='25px'
+        width="25px">&nbsp;&nbsp;Source Code
+      </a>
+    </div>
+  </div>
     <br>
   <div id='project_content_view_feedback'>If you would like to give any feedback
      on this project then drop me an <u><a href='mailto:kr26633z@gmail.com?Subject=Project%20Feedback'>
