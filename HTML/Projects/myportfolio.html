@@ -34,37 +34,48 @@
   #project_git_link {
     vertical-align: middle;
   }
+
+  #image_container {
+
+  }
 </style>
 <script>
   var image_array = [];
   var spinner_counter = 0;
-  image_array[0] = new Image(200, 250);
-  image_array[0].src = '../../Resources/Screenshots/Portfolio/portfolio_home.png';
-  image_array[1] = new Image(200, 250);
-  image_array[1].src = '../../Resources/Screenshots/Portfolio/portfolio_projects.png';
-  image_array[2] = new Image(200, 250);
-  image_array[2].src = '../../Resources/Screenshots/Portfolio/portfolio_contact.png';
 
-  var current_image = image_array[spinner_counter];
-  var image_holding_element = document.getElememtById('image_container');
-  document.getElememtById('image_container').innerHTML = '<b>test</b>';
+  image_array[0] = new Image(200, 250);
+  image_array[0].src = '../Resources/Screenshots/Portfolio/portfolio_home.png';
+  image_array[1] = new Image(200, 250);
+  image_array[1].src = '../Resources/Screenshots/Portfolio/portfolio_projects.png';
+  image_array[2] = new Image(200, 250);
+  image_array[2].src = '../Resources/Screenshots/Portfolio/portfolio_contact.png';
+
+  var current_image = image_array[spinner_counter].src;
+  var image_holding_element = $('#image_area');
   set_image(image_holding_element, image_array, spinner_counter);
 
-
   function  set_image(image_holding_element, image_array, spinner_counter) {
-      image_holding_element.innerHTML = image_array[spinner_counter];
+    image_holding_element.attr('src', image_array[spinner_counter].src);
+    image_holding_element.attr('height', '200').attr('width', '250');
   }
 
   function right_image_button_clicked() {
-    if (spinner_counter == 3) {
-      spinner_counter = 1;
+    if (spinner_counter == 2) {
+      spinner_counter = 0;
     } else {
       spinner_counter++;
     }
     set_image(image_holding_element, image_array, spinner_counter);
   }
 
-
+  function left_image_button_clicked() {
+    if (spinner_counter == 0) {
+      spinner_counter = 2;
+    } else {
+      spinner_counter--;
+    }
+    set_image(image_holding_element, image_array, spinner_counter);
+  }
 
 </script>
 <div id='project_content_view_container'>
@@ -72,8 +83,11 @@
     <br>
   <div id='project_content_view_screens'>
     <div id='image-spinner'>
-      <button>Left</button>
-      <div id='image_container'><img height="200" width="250"></div>
+      <button onclick="left_image_button_clicked();">Left</button>
+      <div id='image_container'>
+        <img id='image_area'/>
+      </div>
+
       <button onclick="right_image_button_clicked();">Right</button>
     </div>
   <div>
