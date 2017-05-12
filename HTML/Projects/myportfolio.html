@@ -36,8 +36,39 @@
   }
 
   #image_container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: 200px;
+  }
+
+  #image_left_button  {
+    line-height: 200px;
+    height: 200px;
+    width:25px;
+    float: left;
+    vertical-align: middle;
+    text-align: center;
+    cursor: hand;
+  }
+
+  #image_right_button  {
+    line-height: 200px;
+    height: 200px;
+    width:25px;
+    float: right;
+    vertical-align: middle;
+    text-align: center;
 
   }
+    #image_right_button:hover {
+          cursor: pointer;
+    }
+
+    #image_left_button:hover {
+      cursor: pointer;
+    }
+
 </style>
 <script>
   var image_array = [];
@@ -83,12 +114,11 @@
     <br>
   <div id='project_content_view_screens'>
     <div id='image-spinner'>
-      <button onclick="left_image_button_clicked();">Left</button>
       <div id='image_container'>
+        <div id='image_left_button' onclick='left_image_button_clicked()'><</div>
         <img id='image_area'/>
+        <div id='image_right_button' onclick='right_image_button_clicked()'>></div>
       </div>
-
-      <button onclick="right_image_button_clicked();">Right</button>
     </div>
   <div>
     <br>
@@ -122,7 +152,7 @@
   </div>
     <br>
   <div id='project_content_view_feedback'>If you would like to give any feedback
-     on this project then drop me an <u><a href='mailto:kr26633z@gmail.com?Subject=Project%20Feedback'>
+     on this project then drop me an <u><a href='mailto:ken@kenroberts.xyz?Subject=Project%20Feedback'>
        e-mail</a></u>
   </div>
 </div>
