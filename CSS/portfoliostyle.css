@@ -280,9 +280,17 @@ a {
   }
 
   .contact_form .form_input_field {
-  	height: 30px;
+  	height: 20px;
   	width: 75%;
     opacity: 0;
+  }
+
+  #contact_message {
+    font-family: arial;
+    font-size: 11px;
+    resize: none;
+    height: 80px;
+    width: 100%;
   }
 
   /* placeholder text browser selector */
@@ -309,6 +317,11 @@ a {
   	display: inline-block;
   	font-size: 16px;
   }
+
+  .form_submit:hover{
+    box-shadow: 2px 2px 5px;
+  }
+
 
 /* for cleaning floats */
 #clear_fix {
