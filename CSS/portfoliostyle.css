@@ -304,7 +304,7 @@ a {
     text-align: center;
   }
   :-moz-placeholder { /* Firefox 18- */
-    text-align: center;;
+    text-align: center;
   }
 
   .form_submit {
@@ -318,8 +318,14 @@ a {
   	font-size: 16px;
   }
 
-  .form_submit:hover{
+  .form_submit:active{
     box-shadow: 2px 2px 5px;
+    padding: 15px 32px;
+  }
+
+  .form_submit:hover {
+    background-color: #4CAF5f;
+    padding: 15px 32px;
   }
 
 

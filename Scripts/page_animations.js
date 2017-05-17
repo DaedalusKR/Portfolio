@@ -96,12 +96,15 @@ function contact_anims() {
 			$('.form_input_field').hide();
 			$('.contact_label').hide();
 			$('.form_submit').hide();
+
+			$('#contact_message').hide();
 			$('.contact_form').animate({height: '225px'});
 			$('.contact_label').animate({opacity: 1});
-			$('.contact_label').fadeIn(100);
+			$('.contact_label').fadeIn(200);
 			$('.form_input_field').animate({opacity: 1});
-			$('.form_input_field').fadeIn(250);
-			$('.form_submit').fadeIn(500), setCookie('page', 'contact.html');
+			$('.form_input_field').fadeIn(400);
+			$('#contact_message').fadeIn(600);
+			$('.form_submit').fadeIn(800), setCookie('page', 'contact.html');
 		}
 		contact_bg_anim_ph1();
 	});
