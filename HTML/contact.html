@@ -6,8 +6,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src='../Scripts/cookie.js'></script>
     <script src='../Scripts/page_animations.js'></script>
+    <script src='../Scripts/page_actions.js'></script>
     <script>
-	contact_anims();
+	   contact_anims();
+
+     $(document).ready(function() {
+       $('.form_submit').click(function() {
+        // $('.form_submit').css('margin', '10px');
+         $('.form_submit').css('transform', 'translateY(4px)');
+         $('.form_submit').css('transform', 'translateX(4px)');
+       });
+     });
+
+
+
     </script>
   </head>
   <body>
@@ -30,7 +42,9 @@
         <form class='contact_form' action='' method='post' name='contact_form' onsubmit='return false'>
         	<label class='contact_label'>Contact Me</label><br><br>
         	<input class='form_input_field' type='text' placeholder='Your Name'><br><br>
-          <input class='form_input_field' type='email'placeholder = 'Your E-mail'><br><br><br>
+          <input class='form_input_field' type='email'placeholder = 'Your E-mail'><br><br>
+          <textarea id='contact_message' placeholder="Your Message:"></textarea><br><br><br>
+
           <input class='form_submit' type='submit' value='Submit'>
         </form>
       </div>

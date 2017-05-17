@@ -1,0 +1,11 @@
+#project_content_view_heading_dev {
+  color: white;
+  text-align: center;
+  font-family: arial;
+  font-size: 28px;
+  text-shadow: 1px 1px 5px;
+}
+
+#spacer {
+  height: 200px;
+}

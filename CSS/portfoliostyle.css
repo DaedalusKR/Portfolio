@@ -151,27 +151,28 @@ a {
   .article_headings {
     text-align: center;
     font-family: arial;
-    font-size: 16px;
+    font-size: 14px;
     margin: 10px;
     opacity: 0;
   }
 
   .article_text {
     font-family: arial;
-    font-size: 14px;
-    margin-left: 20px;
+    text-align: center;
+    font-size: 12px;
+    margin-left: 10px;
     margin-right: 10px;
     opacity: 0;
   }
 
   #about_me {
-    width: 35%;
+    width: 40%;
     height: 1px;
     float: left;
   }
 
   #contact_box {
-    width: 30%;
+    width: 20%;
     height: 325px;
     float: left;
   }
@@ -279,9 +280,17 @@ a {
   }
 
   .contact_form .form_input_field {
-  	height: 30px;
+  	height: 20px;
   	width: 75%;
     opacity: 0;
+  }
+
+  #contact_message {
+    font-family: arial;
+    font-size: 11px;
+    resize: none;
+    height: 80px;
+    width: 100%;
   }
 
   /* placeholder text browser selector */
@@ -295,7 +304,7 @@ a {
     text-align: center;
   }
   :-moz-placeholder { /* Firefox 18- */
-    text-align: center;;
+    text-align: center;
   }
 
   .form_submit {
@@ -308,6 +317,17 @@ a {
   	display: inline-block;
   	font-size: 16px;
   }
+
+  .form_submit:active{
+    box-shadow: 2px 2px 5px;
+    padding: 15px 32px;
+  }
+
+  .form_submit:hover {
+    background-color: #4CAF5f;
+    padding: 15px 32px;
+  }
+
 
 /* for cleaning floats */
 #clear_fix {
