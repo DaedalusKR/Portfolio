@@ -62,14 +62,14 @@ function project_anims() {
 		}
 
 		function projects_anim_p2() {
-			$('#portfolio_main_space_projects_light').animate({height: '0px'}, 250);
-			$('#portfolio_main_space_projects_dark').animate({height: '600px'}, 250, setCookie('page', 'project.html'), projects_anim_p3());
+			$('#portfolio_main_space_projects_light').animate({height: '0px'}, 0);
+			$('#portfolio_main_space_projects_dark').animate({height: '600px'}, 0, setCookie('page', 'project.html'), projects_anim_p3());
 			$('#nav_list, #nav_logo, #footer_text').css({opacity: 1});
 		}
 
 		function projects_anim_p3() {
-			$('#nav_proj_side_container').delay(750).animate({opacity: '1'}, 750);
-			$('#project_content_view_spacer').delay(750).animate({width: '80%'}, 0);
+			$('#nav_proj_side_container').delay(500).animate({opacity: '1'}, 750);
+			$('#project_content_view_spacer').delay(0).animate({width: '80%'}, 0);
 		}
 		projects_anim_p1();
 	});
