@@ -135,6 +135,11 @@ function getContentPage(link_clicked) {
 		case 'Photo Browser':
 			$('#project_content_view').load('Projects/photobrowser.html').hide().slideDown(100);
 			break;
+		case 'TimeLog':
+			$('#project_content_view').load('Projects/TimeLog.html').hide().slideDown(100);
+			break;
+		case 'DriveSpy':
+			$('#project_content_view').load('Projects/DriveSpy.html').hide().slideDown(100);
 		default:
 			document.getElementById('project_content_view').innerHTML = '<b>ERROR - Contact <a href="mailto:kr26633z@gmail.com?Subject=Web%20Page%20Issue target="_top">Web Admin</a></b>';
 		break;
