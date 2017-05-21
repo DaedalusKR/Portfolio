@@ -1,10 +1,12 @@
 function home_anims() {
 	$(document).ready(function(){
 			// checks if page vistied during session and sets animation based on last view
-		var last_visited = checkCookie();
+
+		var last_visited = sessionStorage.getItem("last_page");
+		sessionStorage.setItem("last_page", "home");
 
 		function home_anim_p1() {
-			if (last_visited == ' ') {
+			if (!last_visited) {
 				$('#nav_bar').animate({width: '100%'}, 500);
 				$('#portfolio_main_space').animate({width: '100%'}, 500);
 				$('#main_white_cover').animate({width: '0%'}, 500);
@@ -18,15 +20,17 @@ function home_anims() {
 		}
 
 		function home_anim_p2() {
-			if (last_visited == ' ') {
+			if (!last_visited) {
 				$('#main_white_cover').height('0px');
 				$('#light_green_cover').delay(500).animate({height: '275px'});
 				$('#portfolio_main_space').delay(0).animate({height: '325px'});
-				$('#nav_list, #nav_logo, #footer_text').hide().fadeIn(500).animate({opacity: 1}, setCookie('page', 'index.html'));
+				$('#nav_list, #nav_logo, #footer_text').hide().fadeIn(500).animate({opacity: 1});//, setCookie('page', 'index.html'));
+				setTimeout(function() {home_anim_p3()}, 1250);
+				setTimeout(function() {home_anim_p4()}, 2000);
 			} else {
 				$('#main_white_cover').height('0px');
 				$('#light_green_cover').delay(500).animate({height: '275px'});
-				$('#portfolio_main_space').delay(0).animate({height: '325px'}, setCookie('page', 'index.html'));
+				$('#portfolio_main_space').delay(0).animate({height: '325px'});//, setCookie('page', 'index.html'));
 				$('#nav_list, #nav_logo, #footer_text').css('opacity', '1');
 				setTimeout(function() {home_anim_p3()}, 1250);
 				setTimeout(function() {home_anim_p4()}, 2000);
@@ -56,6 +60,10 @@ function home_anims() {
 
 function project_anims() {
 	$(document).ready(function() {
+
+		var last_visited = sessionStorage.getItem("last_page");
+		sessionStorage.setItem("last_page", "project");
+
 		function projects_anim_p1() {
 			$('#portfolio_main_space_projects_light').animate({width: '20%'}, 250, projects_anim_p2());
 			$('#portfolio_main_space_projects_dark').animate({width: '20%'}, 250, projects_anim_p2());
@@ -63,7 +71,7 @@ function project_anims() {
 
 		function projects_anim_p2() {
 			$('#portfolio_main_space_projects_light').animate({height: '0px'}, 0);
-			$('#portfolio_main_space_projects_dark').animate({height: '600px'}, 0, setCookie('page', 'project.html'), projects_anim_p3());
+			$('#portfolio_main_space_projects_dark').animate({height: '600px'}, 0, projects_anim_p3());//, setCookie('page', 'project.html'), projects_anim_p3());
 			$('#nav_list, #nav_logo, #footer_text').css({opacity: 1});
 		}
 
@@ -78,9 +86,11 @@ function project_anims() {
 function contact_anims() {
 	$(document).ready(function() {
 
-		var last_visited = checkCookie();
+		//var last_visited = checkCookie();
+		var last_visited = sessionStorage.getItem("last_page");
+		sessionStorage.setItem("last_page", "contact");
 
-		if (last_visited == 'project.html') {
+		if (last_visited == 'project') {
 			$('#portfolio_main_space_contact').css('width', '20%');
 			$('#portfolio_main_space_contact').animate({width: '100%'});
 		}
@@ -104,7 +114,7 @@ function contact_anims() {
 			$('.form_input_field').animate({opacity: 1});
 			$('.form_input_field').fadeIn(400);
 			$('#contact_message').fadeIn(600);
-			$('.form_submit').fadeIn(800), setCookie('page', 'contact.html');
+			$('.form_submit').fadeIn(800);//, setCookie('page', 'contact.html');
 		}
 		contact_bg_anim_ph1();
 	});
@@ -118,7 +128,6 @@ $(document).on('click', '#nav_proj_side_a', function() {
 });
 
 function getContentPage(link_clicked) {
-
 	switch (link_clicked) {
 		case 'My Portfolio':
 			$('#project_content_view').load('Projects/myportfolio.html').hide().slideDown(400);
