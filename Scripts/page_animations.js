@@ -10,14 +10,14 @@ function home_anims() {
 				$('#nav_bar').animate({width: '100%'}, 500);
 				$('#portfolio_main_space').animate({width: '100%'}, 500);
 				$('#main_white_cover').animate({width: '0%'}, 500);
-				$('#home_footer').animate({width: '100%'}, 500, home_anim_p2());
+				$('#home_footer').animate({width: '100%'}, 500);
+				setTimeout(function() {home_anim_p3()}, 1500);
+				setTimeout(function() {home_anim_p4()}, 2000);
 			} else {
 				$('#nav_bar').css('width', '100%');
 				$('#portfolio_main_space').animate({width: '100%'}, 500);
-				$('#main_white_cover').animate({width: '0%'}, 500)//, home_anim_p2());
+				$('#main_white_cover').animate({width: '0%'}, 500);
 				$('#home_footer').css('width', '100%');
-				$('#light_green_cover').delay(600).animate({height: '300px'},{easing: 'linear', duration:1000});
-				$('#portfolio_main_space').delay(100).animate({height: '300px'},{easing: 'linear', duration:1000});//, setCookie('page', 'index.html'));
 				$('#nav_list, #nav_logo, #footer_text').css('opacity', '1');
 				setTimeout(function() {home_anim_p3()}, 1500);
 				setTimeout(function() {home_anim_p4()}, 2000);
