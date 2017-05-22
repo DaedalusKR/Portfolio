@@ -8,6 +8,7 @@ function home_anims() {
 		function home_anim_p1() {
 			if (!last_visited) {
 				$('#nav_bar').animate({width: '100%'}, 500);
+				$('#nav_list').animate({opacity: '1'}, 2500); //high duration to offset 0 to 1 speed
 				$('#portfolio_main_space').animate({width: '100%'}, 500);
 				$('#main_white_cover').animate({width: '0%'}, 500);
 				$('#home_footer').animate({width: '100%'}, 500);
