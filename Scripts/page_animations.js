@@ -12,27 +12,14 @@ function home_anims() {
 				$('#main_white_cover').animate({width: '0%'}, 500);
 				$('#home_footer').animate({width: '100%'}, 500, home_anim_p2());
 			} else {
-				 $('#nav_bar').css('width', '100%');
-				 $('#portfolio_main_space').animate({width: '100%'}, 500);
-				 $('#main_white_cover').animate({width: '0%'}, 500, home_anim_p2());
-				 $('#home_footer').css('width', '100%');
-			}
-		}
-
-		function home_anim_p2() {
-			if (!last_visited) {
-				$('#main_white_cover').height('0px');
-				$('#light_green_cover').delay(500).animate({height: '275px'});
-				$('#portfolio_main_space').delay(0).animate({height: '325px'});
-				$('#nav_list, #nav_logo, #footer_text').hide().fadeIn(500).animate({opacity: 1});//, setCookie('page', 'index.html'));
-				setTimeout(function() {home_anim_p3()}, 1250);
-				setTimeout(function() {home_anim_p4()}, 2000);
-			} else {
-				$('#main_white_cover').height('0px');
-				$('#light_green_cover').delay(500).animate({height: '275px'});
-				$('#portfolio_main_space').delay(0).animate({height: '325px'});//, setCookie('page', 'index.html'));
+				$('#nav_bar').css('width', '100%');
+				$('#portfolio_main_space').animate({width: '100%'}, 500);
+				$('#main_white_cover').animate({width: '0%'}, 500)//, home_anim_p2());
+				$('#home_footer').css('width', '100%');
+				$('#light_green_cover').delay(600).animate({height: '300px'},{easing: 'linear', duration:1000});
+				$('#portfolio_main_space').delay(100).animate({height: '300px'},{easing: 'linear', duration:1000});//, setCookie('page', 'index.html'));
 				$('#nav_list, #nav_logo, #footer_text').css('opacity', '1');
-				setTimeout(function() {home_anim_p3()}, 1250);
+				setTimeout(function() {home_anim_p3()}, 1500);
 				setTimeout(function() {home_anim_p4()}, 2000);
 			}
 		}
@@ -53,7 +40,6 @@ function home_anims() {
 			$('.article_headings').delay(750).animate({opacity: '1'}, 1000);
 			$('.article_text').delay(750).animate({opacity: '1'}, 1000);
 		}
-
 		home_anim_p1();
 	});
 }
@@ -106,7 +92,6 @@ function contact_anims() {
 			$('.form_input_field').hide();
 			$('.contact_label').hide();
 			$('.form_submit').hide();
-
 			$('#contact_message').hide();
 			$('.contact_form').animate({height: '225px'});
 			$('.contact_label').animate({opacity: 1});

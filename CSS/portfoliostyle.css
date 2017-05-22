@@ -222,10 +222,11 @@ a {
 }
 
 #main_white_cover {
-  background: white;
-  height: 600px;
+  background: blue;
+  height: 0px;
   width: 100%;
   float: left;
+
 }
 
 #light_green_cover {
