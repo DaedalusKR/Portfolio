@@ -121,10 +121,23 @@ function getContentPage(link_clicked) {
 			xhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
 					document.getElementById('project_content_view').innerHTML = this.responseText;
+
+					// var image_array = [];
+					// image_array[0] = new Image(200, 250);
+					// image_array[0].src = '../Resources/Screenshots/Portfolio/portfolio_home.png';
+					// image_array[1] = new Image(200, 250);
+					// image_array[1].src = '../Resources/Screenshots/Portfolio/portfolio_projects.png';
+					// image_array[2] = new Image(200, 250);
+					// image_array[2].src = '../Resources/Screenshots/Portfolio/portfolio_contact.png';
+					//
+					// var img_src =  new image_spinner();
+					// document.getElementById('image_area').innerHTML = img_src;
+
 				}
 			}
 			xhttp.open('GET', 'Projects/myportfolio.html', true);
 			xhttp.send();
+
 
 			//$('#project_content_view').load('Projects/myportfolio.html').hide().slideDown(400);
 			break;
@@ -150,3 +163,55 @@ function getContentPage(link_clicked) {
 		break;
 	}
 }
+
+
+function left_image_button_clicked() {
+	alert('test');
+}
+
+//
+// function image_spinner(image_array, spinner_counter) {//images[]) {
+//   // this.image_array = image_array;
+//   // this.spinner_counter = spinner_counter;
+//   // var current_image;
+//   // var image_holding_element;
+// 	//
+// 	//
+// 	//
+//   // current_image = this.image_array[this.spinner_counter].src;
+//   // image_holding_element = $('#image_area').attr('height', '200')
+//   //                                         .attr('width', '250')
+//   //                                         .attr('src', this.image_array[0]);
+// 	//
+// 	//
+//   // //return current_image;
+//   // set_image(image_holding_element, this.image_array, this.spinner_counter);
+// 	//
+//
+//
+//   this.right_image_button_clicked = function() {
+// 		alert('right hit');
+//     // if (this.spinner_counter == 2) {
+//     //   this.spinner_counter = 0;
+//     // } else {
+//     //   this.spinner_counter++;
+//     // }
+//   //  set_image(image_holding_element, this.image_array, this.spinner_counter);
+//   }
+//
+//   //   this.left_image_button_clicked = function() {
+//   //   if (this.spinner_counter == 0) {
+//   //     this.spinner_counter = 2;
+//   //   } else {
+//   //     this.spinner_counter--;
+//   //   }
+//   //   set_image(image_holding_element, this.image_array, this.spinner_counter);
+//   // }
+//
+// 	// function set_image(image_holding_element, this.image_array, this.spinner_counter) {
+//   // //  image_holding_element.attr('src', this.image_array[this.spinner_counter].src);
+//   // //  image_holding_element.attr('height', '200').attr('width', '250');
+// 	// 	//return image_holding_element;
+//   // }
+//
+// }
