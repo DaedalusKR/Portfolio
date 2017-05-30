@@ -1,3 +1,8 @@
+* {
+  box-sizing: content-box;
+}
+
+
   #project_content_view_container {
     color: white;
     background: #149332;
@@ -88,4 +93,71 @@
       0% {opacity: 0;}
       100% {opacity: 1;}
 
+    }
+
+    #container {
+      width: 300px;
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+      left: 17px;
+      border-style: solid;
+      border-width: 1px;
+      border-color: black;
+      margin: auto;
+
+    }
+
+    .wrapper {
+      width: 650px;
+      height: 250px;
+      transform: translate3d(0px, 0px, 0);
+      transition: transform 0.5s ease-in-out;
+
+
+    }
+    .slides {
+      float: left;
+      display: inline-block;
+      width: 300px;
+      height: 250px;
+    }
+
+    #leftbutton {
+      width: 20px;
+      background: none;
+      color: white;
+      float: left;
+      position: absolute;
+      top: 110px;
+      line-height: 30px;
+      font-size: 14px;
+      padding-left: 5px;
+    }
+
+    #rightbutton {
+      float: left;
+      width: 20px;
+      color: white;
+      background: none;
+      position: absolute;
+      left: 280px;
+      top: 110px;
+      padding-left: 5px;
+      line-height: 30px;
+      font-size: 14px;
+    }
+
+    #rightbutton:hover, #leftbutton:hover {
+      background: black;
+      cursor: pointer;
+      font-size: 18px;
+      animation-name: arrow_box_ease;
+      animation-duration: 0.4s;
+      animation-timing-function: ease-in;
+    }
+
+    @keyframes arrow_box_ease {
+      0% {background: none; font-size: 14px;}
+      100% {background: black; font-size: 18px;}
     }
