@@ -1,68 +1,32 @@
-<link rel="stylesheet" href='../CSS/project_content.css'>
-<script>
-  var image_array = [];
-  var spinner_counter = 0;
-
-  image_array[0] = new Image(200, 250);
-  image_array[0].src = '../Resources/Screenshots/Portfolio/portfolio_home.png';
-  image_array[1] = new Image(200, 250);
-  image_array[1].src = '../Resources/Screenshots/Portfolio/portfolio_projects.png';
-  image_array[2] = new Image(200, 250);
-  image_array[2].src = '../Resources/Screenshots/Portfolio/portfolio_contact.png';
-
-  var current_image = image_array[spinner_counter].src;
-  var image_holding_element = $('#image_area');
-  set_image(image_holding_element, image_array, spinner_counter);
-
-  function  set_image(image_holding_element, image_array, spinner_counter) {
-    image_holding_element.attr('src', image_array[spinner_counter].src);
-    image_holding_element.attr('height', '200').attr('width', '250');
-  }
-
-  function right_image_button_clicked() {
-    if (spinner_counter == 2) {
-      spinner_counter = 0;
-    } else {
-      spinner_counter++;
-    }
-    set_image(image_holding_element, image_array, spinner_counter);
-  }
-
-  function left_image_button_clicked() {
-    if (spinner_counter == 0) {
-      spinner_counter = 2;
-    } else {
-      spinner_counter--;
-    }
-    set_image(image_holding_element, image_array, spinner_counter);
-  }
-
-</script>
 <div id='project_content_view_container'>
-  <div id='project_content_view_title'>My Portfolio</div>
+  <div id='project_content_view_title'>Portfolio Site</div>
     <br>
   <div id='project_content_view_screens'>
-    <div id='image-spinner'>
-      <div id='image_container'>
-        <div id='image_left_button' onclick='left_image_button_clicked()'><</div>
-        <img id='image_area'/>
-        <div id='image_right_button' onclick='right_image_button_clicked()'>></div>
-      </div>
+    <div id='container'>
+      <div class='wrapper'>
+        <img class='slides' data-pos='0px' src="../Resources/Screenshots/Portfolio/portfolio_home.png" height='250px' width='300px'/>
+        <img class='slides' data-pos='300px' src="../Resources/Screenshots/Portfolio/portfolio_projects.png" height='250px' width='300px'/>
+        <img class='slides' data-pos='600px' src="../Resources/Screenshots/Portfolio/portfolio_contact.png" height='250px' width='300px'/>
     </div>
+    <div id='leftbutton' onclick="left_clicked()"><</div>
+    <div id='rightbutton' onclick="right_clicked()">></div>
+  </div>
   <div>
     <br>
-  <div id='project_content_view_desc'>
-    <p>My portfolio site is written in HTML5 and uses CSS for styling and a mix
-      of JavaScript and JQuery to power the animations on the pages.</p></br>
-    <p>The source code is available on GitHub by clicking on the link below.</p>
-    </div>
-    <br>
-  <div id='project_content_view_gitlink'>
-    <div>
-      <a href='https://github.com/DaedalusKR/Portfolio' target='_blank'>
-        <img id='project_git_link' src="../Resources/github.png" height='25px'
-        width="25px">&nbsp;&nbsp;Source Code
-      </a>
+  <div id='project_detail_container'>
+    <div id='project_content_view_desc'>
+      <p>My portfolio site is written in HTML5 and uses CSS for styling and a mix
+        of JavaScript and JQuery to power the animations on the pages.</p></br>
+      <p>The source code is available on GitHub by clicking on the link below.</p>
+      </div>
+      <br>
+    <div id='project_content_view_gitlink'>
+      <div>
+        <a href='https://github.com/DaedalusKR/Portfolio' target='_blank'>
+          <img id='project_git_link' src="../Resources/github.png" height='25px'
+          width="25px">&nbsp;&nbsp;Source Code
+        </a>
+      </div>
     </div>
   </div>
 </div>

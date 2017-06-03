@@ -114,9 +114,19 @@ $(document).on('click', '#nav_proj_side_a', function() {
 });
 
 function getContentPage(link_clicked) {
+	var xhttp = new XMLHttpRequest();
+
 	switch (link_clicked) {
 		case 'My Portfolio':
-			$('#project_content_view').load('Projects/myportfolio.html').hide().slideDown(400);
+			 xhttp.onreadystatechange = function() {
+			 	if (this.readyState == 4 && this.status == 200) {
+			 		document.getElementById('project_content_view').innerHTML = this.responseText;
+					image_frames = document.getElementsByClassName('slides'); //hoist into scope but excl var
+					wrapper_frame = document.getElementsByClassName('wrapper'); //hoist into scope but excl var
+				}
+			}
+			xhttp.open('GET', 'Projects/myportfolio.html', true);
+			xhttp.send();
 			break;
 		case 'Blog':
 			$('#project_content_view').load('Projects/blog.html').hide().slideDown(100);
