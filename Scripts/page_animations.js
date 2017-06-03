@@ -121,52 +121,12 @@ function getContentPage(link_clicked) {
 			 xhttp.onreadystatechange = function() {
 			 	if (this.readyState == 4 && this.status == 200) {
 			 		document.getElementById('project_content_view').innerHTML = this.responseText;
-					//alert(document.getElementById('project_content_view').outerHTML);
+					image_frames = document.getElementsByClassName('slides'); //hoist into scope but excl var
+					wrapper_frame = document.getElementsByClassName('wrapper'); //hoist into scope but excl var
 				}
 			}
 			xhttp.open('GET', 'Projects/myportfolio.html', true);
 			xhttp.send();
-			// // 		var slides = document.getElementByClassName('slides');
-			// 		alert(slides.length);
-			// 		// document.getElementById('script_injection').innerHTML = "<script src='../Scripts/spinner.js' type='text/javascript'></script>";
-			// 		// alert(document.querySelectorAll('.slides')[0]);
-					// //var script_holder =
-					// eval(document.getElementsByTagName('script_injection').innerHTML);
-					// //eval(script_holder.innerHTML);
-					// alert(script_holder);
-					// eval(script_holder.innerHTML);
-
-
-					// var arr = document.getElementById('script_injection');
-					// console.log(arr);
-					// for (var n = 0; n < arr.length; n++) {
-    			// 	eval(arr[n].innerHTML)//run script inside div
-					// }
-
-					// var image_array = [];
-					// image_array[0] = new Image(200, 250);
-					// image_array[0].src = '../Resources/Screenshots/Portfolio/portfolio_home.png';
-					// image_array[1] = new Image(200, 250);
-					// image_array[1].src = '../Resources/Screenshots/Portfolio/portfolio_projects.png';
-					// image_array[2] = new Image(200, 250);
-					// image_array[2].src = '../Resources/Screenshots/Portfolio/portfolio_contact.png';
-					//
-					// var img_src =  new image_spinner();
-					// document.getElementById('image_area').innerHTML = img_src;
-			//
-
-
-			// $.ajax({
-			// 	//type: 'GET',
-			// 	url: 'Projects/myportfolio.html',
-			// //	cache: false,
-			// 	// success: function(data) {
-			// 	// 	alert(data);
-			// 	// 	$('#project_content_view').innerHTML = data;
-			// 	// }
-			//  });
-
-		//	$('#project_content_view').load('Projects/myportfolio.html').hide().slideDown(400);
 			break;
 		case 'Blog':
 			$('#project_content_view').load('Projects/blog.html').hide().slideDown(100);
@@ -190,55 +150,3 @@ function getContentPage(link_clicked) {
 		break;
 	}
 }
-
-
-function left_image_button_clicked() {
-	alert('test');
-}
-
-//
-// function image_spinner(image_array, spinner_counter) {//images[]) {
-//   // this.image_array = image_array;
-//   // this.spinner_counter = spinner_counter;
-//   // var current_image;
-//   // var image_holding_element;
-// 	//
-// 	//
-// 	//
-//   // current_image = this.image_array[this.spinner_counter].src;
-//   // image_holding_element = $('#image_area').attr('height', '200')
-//   //                                         .attr('width', '250')
-//   //                                         .attr('src', this.image_array[0]);
-// 	//
-// 	//
-//   // //return current_image;
-//   // set_image(image_holding_element, this.image_array, this.spinner_counter);
-// 	//
-//
-//
-//   this.right_image_button_clicked = function() {
-// 		alert('right hit');
-//     // if (this.spinner_counter == 2) {
-//     //   this.spinner_counter = 0;
-//     // } else {
-//     //   this.spinner_counter++;
-//     // }
-//   //  set_image(image_holding_element, this.image_array, this.spinner_counter);
-//   }
-//
-//   //   this.left_image_button_clicked = function() {
-//   //   if (this.spinner_counter == 0) {
-//   //     this.spinner_counter = 2;
-//   //   } else {
-//   //     this.spinner_counter--;
-//   //   }
-//   //   set_image(image_holding_element, this.image_array, this.spinner_counter);
-//   // }
-//
-// 	// function set_image(image_holding_element, this.image_array, this.spinner_counter) {
-//   // //  image_holding_element.attr('src', this.image_array[this.spinner_counter].src);
-//   // //  image_holding_element.attr('height', '200').attr('width', '250');
-// 	// 	//return image_holding_element;
-//   // }
-//
-// }
