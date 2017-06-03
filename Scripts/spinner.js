@@ -16,7 +16,6 @@ function right_clicked() {
     wrapper_frame[0].style.transform = translate_value;
     current_image_index = 0;
   }
-
 }
 
 function left_clicked() {
