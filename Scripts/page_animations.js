@@ -110,19 +110,22 @@ function contact_anims() {
 $(document).on('click', '#nav_proj_side_a', function() {
 	var link_clicked = $(this).text();
 	if ($('#project_content_view').width() == 0) {
-		$('#project_content_view_spacer').animate({width: '0%'});
 		$('#project_content_view').css('height', '600px');
 		$('#project_content_view').animate({width: '80%'});
+		$('#project_content_view_spacer').animate({width: '0%'});
 		getContentPage(link_clicked);
 	} else {
-		$('#project_content_view_spacer').animate({width: '80%'});
+		$('#project_content_view').animate({width: '0%'});
+		$('#project_content_view_screens').css('opacity', '0');
+		$('#project_content_view_title').css('opacity', '0');
+		$('#project_content_view_heading_dev').css('opacity', '0');
+		$('#project_content_view_spacer').animate({width: '0%'});
 		$('#project_content_view').css('height', '600px');
-		$('#project_content_view').delay(100).animate({width: '0%'});
-
 		setTimeout(function() {
 			$('#project_content_view_spacer').animate({width: '0%'});
 			$('#project_content_view').css('height', '600px');
 			$('#project_content_view').animate({width: '80%'});
+
 			getContentPage(link_clicked);
 		}, 500);
 	}
