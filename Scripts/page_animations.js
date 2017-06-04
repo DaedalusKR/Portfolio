@@ -106,13 +106,29 @@ function contact_anims() {
 	});
 }
 
+//project subpages glide in
 $(document).on('click', '#nav_proj_side_a', function() {
-	$('#project_content_view_spacer').animate({width: '0%'});
-	$('#project_content_view').css('height', '600px');
-	$('#project_content_view').animate({width: '80%'});
-	getContentPage($(this).text());
+	var link_clicked = $(this).text();
+	if ($('#project_content_view').width() == 0) {
+		$('#project_content_view_spacer').animate({width: '0%'});
+		$('#project_content_view').css('height', '600px');
+		$('#project_content_view').animate({width: '80%'});
+		getContentPage(link_clicked);
+	} else {
+		$('#project_content_view_spacer').animate({width: '80%'});
+		$('#project_content_view').css('height', '600px');
+		$('#project_content_view').delay(100).animate({width: '0%'});
+
+		setTimeout(function() {
+			$('#project_content_view_spacer').animate({width: '0%'});
+			$('#project_content_view').css('height', '600px');
+			$('#project_content_view').animate({width: '80%'});
+			getContentPage(link_clicked);
+		}, 500);
+	}
 });
 
+//ajax calls for project links
 function getContentPage(link_clicked) {
 	var xhttp = new XMLHttpRequest();
 
@@ -123,28 +139,55 @@ function getContentPage(link_clicked) {
 			 		document.getElementById('project_content_view').innerHTML = this.responseText;
 					image_frames = document.getElementsByClassName('slides'); //hoist into scope but excl var
 					wrapper_frame = document.getElementsByClassName('wrapper'); //hoist into scope but excl var
-				}
-			}
-			xhttp.open('GET', 'Projects/myportfolio.html', true);
-			xhttp.send();
+				}}
+			xhttp.open('GET', 'Projects/myportfolio.html', true); xhttp.send();
 			break;
+
 		case 'Blog':
-			$('#project_content_view').load('Projects/blog.html').hide().slideDown(100);
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById('project_content_view').innerHTML = this.responseText;
+				}}
+			xhttp.open('GET', 'Projects/blog.html', true); xhttp.send();
 			break;
+
 		case 'Web Progger':
-			$('#project_content_view').load('Projects/webprogger.html').hide().slideDown(100);
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById('project_content_view').innerHTML = this.responseText;
+				}}
+			xhttp.open('GET', 'Projects/webprogger.html', true); xhttp.send();
 			break;
+
 		case 'Wedding':
-			$('#project_content_view').load('Projects/wedding.html').hide().slideDown(100);
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById('project_content_view').innerHTML = this.responseText;
+				}}
+			xhttp.open('GET', 'Projects/wedding.html', true);	xhttp.send();
 			break;
+
 		case 'Photo Browser':
-			$('#project_content_view').load('Projects/photobrowser.html').hide().slideDown(100);
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					docment.getElementById('project_content_view').innerHTML = this.responseText;
+				}}
+			xhttp.open('GET', 'Projects/photobrowser.html', true); xhttp.send();
 			break;
+
 		case 'TimeLog':
-			$('#project_content_view').load('Projects/TimeLog.html').hide().slideDown(100);
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById('project_content_view').innerHTML = this.responseText;
+				}}
+			xhttp.open('GET','Projects/TimeLog.html', true); xhttp.send();
 			break;
 		case 'DriveSpy':
-			$('#project_content_view').load('Projects/DriveSpy.html').hide().slideDown(100);
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById('project_content_view').innerHTML = this.responseText;
+				}}
+			xhttp.open('GET', 'Projects/DriveSpy.html', true); xhttp.send();
 		default:
 			document.getElementById('project_content_view').innerHTML = '<b>ERROR - Contact <a href="mailto:kr26633z@gmail.com?Subject=Web%20Page%20Issue target="_top">Web Admin</a></b>';
 		break;
