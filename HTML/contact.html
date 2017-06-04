@@ -7,20 +7,7 @@
     <script src='../Scripts/cookie.js'></script>
     <script src='../Scripts/page_animations.js'></script>
     <script src='../Scripts/page_actions.js'></script>
-    <script>
-	   contact_anims();
-
-     $(document).ready(function() {
-       $('.form_submit').click(function() {
-        // $('.form_submit').css('margin', '10px');
-         $('.form_submit').css('transform', 'translateY(4px)');
-         $('.form_submit').css('transform', 'translateX(4px)');
-       });
-     });
-
-
-
-    </script>
+    <script>contact_anims();</script>
   </head>
   <body>
     <nav id='nav_bar_alt'>
@@ -43,13 +30,11 @@
         	<label class='contact_label'>Contact Me</label><br><br>
         	<input class='form_input_field' type='text' placeholder='Your Name'><br><br>
           <input class='form_input_field' type='email'placeholder = 'Your E-mail'><br><br>
-          <textarea id='contact_message' placeholder="Your Message:"></textarea><br><br><br>
-
+          <textarea class='contact_message' placeholder="Your Message:"></textarea><br><br><br>
           <input class='form_submit' type='submit' value='Submit'>
         </form>
       </div>
     </main><div id='clear_fix'></div>
-
     <footer id="footer_alt"><div id='footer_text' style="animation-duration:0s;">copyright &copy; Ken Roberts</div></footer>
   </body>
 </html>

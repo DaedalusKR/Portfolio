@@ -84,7 +84,7 @@ function contact_anims() {
 
 		function contact_bg_anim_ph1() {
 			$('#main_white_cover').height('0px');
-			$('#light_green_cover').delay(0).animate({height: '275px'}, contact_bg_anim_ph2());
+			//$('#light_green_cover').delay(0).animate({height: '275px'});//, contact_bg_anim_ph2());
 			$('#portfolio_main_space').delay(0).animate({height: '325px'}, contact_bg_anim_ph2());
 		}
 
@@ -93,13 +93,15 @@ function contact_anims() {
 			$('.form_input_field').hide();
 			$('.contact_label').hide();
 			$('.form_submit').hide();
-			$('#contact_message').hide();
+			$('.contact_message').hide();
 			$('.contact_form').animate({height: '225px'});
 			$('.contact_label').animate({opacity: 1});
 			$('.contact_label').fadeIn(200);
 			$('.form_input_field').animate({opacity: 1});
 			$('.form_input_field').fadeIn(400);
-			$('#contact_message').fadeIn(600);
+			$('.contact_message').animate({opacity: 1});
+			$('.contact_message').fadeIn(800);
+			$('.form_submit').animate({opacity: 1});
 			$('.form_submit').fadeIn(800);//, setCookie('page', 'contact.html');
 		}
 		contact_bg_anim_ph1();
