@@ -179,7 +179,7 @@ a {
   .article_headings {
     text-align: center;
     font-family: arial;
-    font-size: 14px;
+    font-size: 16px;
     margin: 10px;
     opacity: 0;
   }
@@ -187,7 +187,7 @@ a {
   .article_text {
     font-family: arial;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     margin-left: 10px;
     margin-right: 10px;
     opacity: 0;
@@ -308,12 +308,13 @@ a {
     opacity: 0;
   }
 
-  #contact_message {
+  .contact_message {
     font-family: arial;
     font-size: 11px;
     resize: none;
     height: 80px;
     width: 100%;
+    opacity: 0;
   }
 
   /* placeholder text browser selector */
@@ -339,6 +340,7 @@ a {
   	text-decoration: none;
   	display: inline-block;
   	font-size: 16px;
+    opacity: 0;
   }
 
   .form_submit:active{
