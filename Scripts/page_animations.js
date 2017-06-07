@@ -2,46 +2,63 @@ function home_anims() {
 	$(document).ready(function(){
 			// checks if page vistied during session and sets animation based on last view
 
-		var last_visited = sessionStorage.getItem("last_page");
-		sessionStorage.setItem("last_page", "home");
+		var screen_width_max = window.matchMedia( "(max-width: 640px)" );
+		if (screen_width_max.matches) { //simple anims for mobile
 
-		function home_anim_p1() {
-			if (!last_visited) {
-				$('#nav_bar').animate({width: '100%'}, 500);
-				$('#nav_list').animate({opacity: '1'}, 2500); //high duration to offset 0 to 1 speed
-				$('#portfolio_main_space').animate({width: '100%'}, 500);
-				$('#main_white_cover').animate({width: '0%'}, 500);
-				$('#home_footer').animate({width: '100%'}, 500);
-				setTimeout(function() {home_anim_p3()}, 1500);
-				setTimeout(function() {home_anim_p4()}, 2000);
-			} else {
-				$('#nav_bar').css('width', '100%');
-				$('#portfolio_main_space').animate({width: '100%'}, 500);
-				$('#main_white_cover').animate({width: '0%'}, 500);
-				$('#home_footer').css('width', '100%');
-				$('#nav_list, #nav_logo, #footer_text').css('opacity', '1');
-				setTimeout(function() {home_anim_p3()}, 1500);
-				setTimeout(function() {home_anim_p4()}, 2000);
+			function name_type_mobile() {
+				var name = $('#name_area').data('text');
+				type_writer_effect_name(name, 0);
+				setTimeout(role_type_mobile(), 2000);
 			}
-		}
 
-		function home_anim_p3() {
-			var name = $('#name_area').data('text');
-			type_writer_effect_name(name, 0);
-		}
+			function role_type_mobile() {
+				var role = $('#role_area').data('text');
+				type_writer_effect_role(role, 0);
+			}
 
-		function home_anim_p4() {
-			var role = $('#role_area').data('text');
-			type_writer_effect_role(role, 0);
-			setTimeout(home_anim_p5());
-		}
+			name_type_mobile();
+		} else {
+			var last_visited = sessionStorage.getItem("last_page");
+			sessionStorage.setItem("last_page", "home");
 
-		function home_anim_p5() {
-			$('#about_me').animate({height: '325px'});
-			$('.article_headings').delay(750).animate({opacity: '1'}, 1000);
-			$('.article_text').delay(750).animate({opacity: '1'}, 1000);
+			function home_anim_p1() {
+				if (!last_visited) {
+					$('#nav_bar').animate({width: '100%'}, 500);
+					$('#nav_list').animate({opacity: '1'}, 2500); //high duration to offset 0 to 1 speed
+					$('#portfolio_main_space').animate({width: '100%'}, 500);
+					$('#main_white_cover').animate({width: '0%'}, 500);
+					$('#home_footer').animate({width: '100%'}, 500);
+					setTimeout(function() {home_anim_p3()}, 1500);
+					setTimeout(function() {home_anim_p4()}, 2000);
+				} else {
+					$('#nav_bar').css('width', '100%');
+					$('#portfolio_main_space').animate({width: '100%'}, 500);
+					$('#main_white_cover').animate({width: '0%'}, 500);
+					$('#home_footer').css('width', '100%');
+					$('#nav_list, #nav_logo, #footer_text').css('opacity', '1');
+					setTimeout(function() {home_anim_p3()}, 1500);
+					setTimeout(function() {home_anim_p4()}, 2000);
+				}
+			}
+
+			function home_anim_p3() {
+				var name = $('#name_area').data('text');
+				type_writer_effect_name(name, 0);
+			}
+
+			function home_anim_p4() {
+				var role = $('#role_area').data('text');
+				type_writer_effect_role(role, 0);
+				setTimeout(home_anim_p5());
+			}
+
+			function home_anim_p5() {
+				$('#about_me').animate({height: '325px'});
+				$('.article_headings').delay(750).animate({opacity: '1'}, 1000);
+				$('.article_text').delay(750).animate({opacity: '1'}, 1000);
+			}
+			home_anim_p1();
 		}
-		home_anim_p1();
 	});
 }
 
