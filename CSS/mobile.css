@@ -122,6 +122,23 @@ a {
   margin-right: 10px;
 }
 
+#contact_box {
+  background-color: yellow;
+  width: 20%;
+  list-style: none;
+  height: 325px;
+  display: inline;
+}
+
+#github, #facebook, #twitter, #youtube {
+  display: inline-block;
+  width: 60px;
+  position: relative;
+  left: 25%;
+  text-align: center;
+}
+
+
 
 /* ---- FOOTER ------*/
 #home_footer {
