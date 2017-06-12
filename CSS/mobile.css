@@ -129,10 +129,11 @@ a {
 }
 
 #github, #facebook, #twitter, #youtube {
-  display: inline-block;
+  display: inline;
   width: 60px;
-  position: relative;
+  margin: 0 auto;
   text-align: center;
+  float: left;
 }
 
 /* ---- FOOTER ------*/

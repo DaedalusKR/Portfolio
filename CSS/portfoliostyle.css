@@ -198,10 +198,18 @@ a {
   }
 
   #contact_box {
+    opacity: 0;
     width: 20%;
     height: 325px;
     float: left;
   }
+
+  #contact_box ul {
+    list-style: none;
+    position: relative;
+    left: 40%;
+  }
+
 
   #logo_spacer {
     width: 40%;
