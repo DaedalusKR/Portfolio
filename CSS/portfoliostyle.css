@@ -75,7 +75,6 @@ a {
 
 #nav_proj_side {
   padding: 30px 5px;
-  max-width:
 }
 
   #nav_proj_side_container {
@@ -244,14 +243,15 @@ a {
 #project_content_view {
   background: #149332;
   width: 0%;
-  height: 1px;
+  display: inline-block;
+  height: 0px;
   float: left;
 }
 
 #project_content_view_spacer {
   background: white;
   width: 0%;
-  height: 1px;
+  height: 0px;
   float: left;
 }
 
