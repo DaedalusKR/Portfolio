@@ -60,6 +60,8 @@ function home_anims() {
 				$('#contact_box').delay(1000).animate({opacity: '1'}, 1000);
 				$('.article_text').delay(750).animate({opacity: '1'}, 1000);
 			}
+
+
 			home_anim_p1();
 		}
 	});
@@ -68,7 +70,7 @@ function home_anims() {
 function project_anims() {
 	$(document).ready(function() {
 
-		setTimeout(projects_anim_p4, 1500); //switches to max width for nav bar
+		setTimeout(projects_anim_p4(), 1500); //switches to max width for nav bar
 
 		var last_visited = sessionStorage.getItem("last_page");
 		sessionStorage.setItem("last_page", "project");
@@ -93,7 +95,15 @@ function project_anims() {
 
 		function projects_anim_p4() {
 			$('.portfolio_main_space_projects_dark').addClass('portfolio_main_space_projects_dark_max_h');
+			var link_clicked = $(this).text();
+			var content_width = $(window).width() - 120;
+			$('#project_content_view').css('height', '600px');
+			$('#project_content_view').delay(0).animate({width: content_width + 'px'});
+			$('#project_content_view_spacer').delay(0).animate({width: '0%'});
+			getContentPage('My Portfolio');
+
 		}
+
 		projects_anim_p1();
 	});
 }
@@ -161,6 +171,17 @@ $(document).on('click', '#nav_proj_side_a', function() {
 			getContentPage(link_clicked);
 		}, 500);
 	}
+});
+
+//workarond for resizing project page widths -- on resize updates width
+$(window).resize( function() {
+	if ($('#project_content_view').width() > 0) {
+		var content_width = $(window).width() - 120;
+		$('#project_content_view').css('height', '600px');
+		$('#project_content_view').css('width', content_width + 'px');
+		$('#project_content_view_spacer').animate({width: '0%'});
+		getContentPage(link_clicked);
+	 }
 });
 
 //ajax calls for project links
