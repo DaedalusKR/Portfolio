@@ -73,8 +73,9 @@ function project_anims() {
 		var last_visited = sessionStorage.getItem("last_page");
 		sessionStorage.setItem("last_page", "project");
 
+
 		function projects_anim_p1() {
-			$('#portfolio_main_space_projects_light').animate({width: '20%'}, 250, projects_anim_p2());
+			//$('#portfolio_main_space_projects_light').animate({width: '20%'}, 250, projects_anim_p2());
 			$('.portfolio_main_space_projects_dark').animate({width: '120px'}, 250, projects_anim_p2());
 		}
 
@@ -138,23 +139,25 @@ function contact_anims() {
 //project subpages glide in
 $(document).on('click', '#nav_proj_side_a', function() {
 	var link_clicked = $(this).text();
+	var content_width = $(window).width() - 120;
 	if ($('#project_content_view').width() == 0) {
 		$('#project_content_view').css('height', '600px');
-		$('#project_content_view').animate({width: '80%'});
+		$('#project_content_view').animate({width: content_width + 'px'});
 		$('#project_content_view_spacer').animate({width: '0%'});
 		getContentPage(link_clicked);
-	} else {
+	 }
+	else {
 		$('#project_content_view').animate({width: '0%'});
 		$('#project_content_view_screens').css('opacity', '0');
 		$('#project_content_view_title').css('opacity', '0');
 		$('#project_content_view_heading_dev').css('opacity', '0');
-		$('#project_content_view_spacer').animate({width: '0%'});
 		$('#project_content_view').css('height', '600px');
+		$('#project_content_view_spacer').css('width', '0%');
+
 		setTimeout(function() {
 			$('#project_content_view_spacer').animate({width: '0%'});
 			$('#project_content_view').css('height', '600px');
-			$('#project_content_view').animate({width: '80%'});
-
+			$('#project_content_view').animate({width: content_width  + 'px'});
 			getContentPage(link_clicked);
 		}, 500);
 	}
