@@ -1,6 +1,6 @@
 /* Override Defaults */
 * {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -60,21 +60,20 @@ a {
 /*--------- Content Section ------------- */
 
 #name_area {
-  position: absolute;
-  top: 15%;
-  left: 30%;
+  padding-top: 50px;
   height: 50px;
   font-size: 26px;
   font-weight: bold;
   font-family: arial;
   text-align: center;
   color: white;
+  margin: 0 auto;
+  display: block;
 }
 
 #role_area {
-  position: absolute;
-  top: 20%;
-  left: 33%;
+  display: block;
+  margin: 0 auto;
   height: 50px;
   font-size: 18px;
   font-weight: bold;
@@ -117,28 +116,24 @@ a {
   text-align: center;
   font-size: 14px;
   margin-left: 10px;
-  padding-left: 30%;
-  padding-right: 30%;
+  padding-left: 10%;
+  padding-right: 10%;
   margin-right: 10px;
+
 }
 
 #contact_box {
-  background-color: yellow;
-  width: 20%;
   list-style: none;
-  height: 325px;
-  display: inline;
+  margin: 0 auto;
+  display: table;
 }
 
 #github, #facebook, #twitter, #youtube {
   display: inline-block;
   width: 60px;
   position: relative;
-  left: 25%;
   text-align: center;
 }
-
-
 
 /* ---- FOOTER ------*/
 #home_footer {

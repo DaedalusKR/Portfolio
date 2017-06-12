@@ -8,7 +8,9 @@ function home_anims() {
 			function name_type_mobile() {
 				var name = $('#name_area').data('text');
 				type_writer_effect_name(name, 0);
-				setTimeout(role_type_mobile(), 2000);
+				setTimeout(function() {
+					role_type_mobile();
+				}, 1000);
 			}
 
 			function role_type_mobile() {
