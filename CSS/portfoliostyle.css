@@ -1,6 +1,6 @@
 /* Override Defaults */
 * {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -75,6 +75,7 @@ a {
 
 #nav_proj_side {
   padding: 30px 5px;
+  max-width:
 }
 
   #nav_proj_side_container {
@@ -153,27 +154,24 @@ a {
 }
 
   #name_area {
-    position: absolute;
-    top: 20%;
-    left: 34%;
+    padding-top: 50px;
     height: 50px;
     font-size: 40px;
     font-weight: bold;
     font-family: arial;
     text-align: center;
     color: white;
+    display: block;
   }
 
   #role_area {
-    position: absolute;
-    top: 30%;
-    left: 39%;
     height: 50px;
     font-size: 24px;
     font-weight: bold;
     font-family: arial;
     text-align: center;
     color: white;
+    display: block;
   }
 
   .article_headings {
@@ -200,10 +198,18 @@ a {
   }
 
   #contact_box {
+    opacity: 0;
     width: 20%;
     height: 325px;
     float: left;
   }
+
+  #contact_box ul {
+    list-style: none;
+    position: relative;
+    left: 40%;
+  }
+
 
   #logo_spacer {
     width: 40%;
@@ -217,12 +223,22 @@ a {
     text-align: center;
   }
 
-#portfolio_main_space_projects_dark {
+.portfolio_main_space_projects_dark {
   width: 100%;
   height: 325px;
   background: green;
   color: white;
   float: left;
+}
+
+.portfolio_main_space_projects_dark_max_h {
+  width: 20%;
+  height: 325px;
+  background: green;
+  color: white;
+  float: left;
+  max-width: 120px;
+  min-width: 120px;
 }
 
 #project_content_view {
@@ -288,6 +304,7 @@ a {
   margin: auto;
   height: 0px;
   width: 50%;
+  max-width: 300px;
   border: 2px solid black;
   border-top: 0px;
   text-align: center;
