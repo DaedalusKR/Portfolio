@@ -257,3 +257,14 @@ function getContentPage(link_clicked) {
 		break;
 	}
 }
+
+//$(document).ready(function() {
+	function expand_menu() {
+		$('#nav_proj_side').animate({width: '20%'});
+		// $('.menu_box').animate({left: '-75px'});
+
+
+
+	}
+
+//});

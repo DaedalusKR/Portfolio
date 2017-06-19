@@ -9,6 +9,19 @@ a {
   text-decoration: none;
 }
 
+.menu_box {
+  height: 30px;
+  width: 35px;
+  background: green;
+  position: absolute;
+  border: 2px white solid;
+  border-radius: 25%;
+}
+
+.menu_box:hover {
+  cursor: pointer;
+}
+
 /*----- Navigation Main Area -------*/
 #nav_bar, #nav_bar_alt {
   background: black;
@@ -105,37 +118,47 @@ a {
 }
 
 #nav_proj_side {
-  background: darkgreen;
+  opacity: 0;
+  background: #149332;
+  height: 0px;
   width: 100%;
-  height: 100%;
 }
 
-#project_content_view_spacer, #project_content_view{
+#project_content_view {
+  width: 100%;
+  height: auto;
+  min-height: 149px;
+  background: green;
+  /*float: right;*/
+}
+
+#project_content_view_spacer {
   opacity: 0;
   height: 0px;
+  width: 0px;
 }
+
 
 #nav_proj_side_title {
   color: white;
-  font-size: 18px;
+  font-size: 12px;
   text-align: center;
 }
 
 #nav_proj_side_item {
   color: white;
-  font-size: 16px;
+  font-size: 12px;
   text-align: center;
   list-style: none;
 }
 
 #my_portfolio_m {
   color: white;
+  background: blue;
+  margin: 0px 0px;
 }
 
-#project_content_view {
-  opacity: 0;
-  width: 0px;
-}
+
 
 .article_headings {
   text-align: center;

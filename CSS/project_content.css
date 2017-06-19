@@ -5,8 +5,8 @@
 
   #project_content_view_container {
     color: white;
-    background: #149332;
-    margin: 25px;
+    background: green;
+    /*margin: 25px;*/
     font-family: arial;
   }
 
@@ -20,6 +20,7 @@
 
   #project_content_view_desc {
     font-size: 12px;
+    padding: 20px;
   }
 
   #project_content_view_screens {
@@ -28,6 +29,7 @@
 
   #project_content_view_gitlink {
     font-size: 12px;
+    padding: 20px;
   }
 
   #project_content_view_feedback {

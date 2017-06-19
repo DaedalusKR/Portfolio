@@ -35,7 +35,6 @@
           <ul id='nav_proj_side_container'>
             <h1 id='nav_proj_side_title'>Websites</h1>
             <a href='#' id='nav_proj_side_a'><li id='nav_proj_side_item'>My Portfolio</li></a>
-              <div id='my_portfolio_m'>&nbsp;</div>
             <a href='#' id='nav_proj_side_a'><li id='nav_proj_side_item'>Blog</li></a>
             <a href='#' id='nav_proj_side_a'><li id='nav_proj_side_item'>Web Progger</li></a>
             <a href='#' id='nav_proj_side_a'><li id='nav_proj_side_item'>Wedding</li></a>
@@ -49,7 +48,21 @@
       </div>
     </div>
     <div id='project_content_view_spacer'>&nbsp;</div>
-    <div id='project_content_view'>&nbsp;</div>
+    <div id='project_content_view'>
+      <div id='mobile_projects_portfolio'>
+        <script>$('#mobile_projects_portfolio').load('Projects/myportfolio.html');</script>
+      </div><hr>
+      <div id='mobile_projects_blog'>
+        <script>$('#mobile_projects_blog').load('Projects/blog.html');</script>
+      </div><hr>
+      <div id='mobile_peojects_wedding'>
+          <script>$('#mobile_peojects_wedding').load('Projects/wedding.html');</script>
+      </div>
+      <!-- <div class='menu_box' onclick='expand_menu()'>
+          <img src="../Resources/menu-exp.png" height="30px" width="35px"/>
+      </div> -->
+      <!-- <div id='my_portfolio_m'>&nbsp;</div> -->
+    </div>
     <div id='clear_fix'></div>
     <footer id="footer_alt"><div id='footer_text' style="animation-duration:0s;">copyright &copy; Ken Roberts</div></footer>
   </body>
