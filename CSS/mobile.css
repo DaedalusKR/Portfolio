@@ -127,7 +127,6 @@ a {
 #project_content_view {
   width: 100%;
   height: auto;
-  min-height: 149px;
   background: green;
   /*float: right;*/
 }
@@ -139,7 +138,7 @@ a {
 }
 
 
-#nav_proj_side_title {
+/*#nav_proj_side_title {
   color: white;
   font-size: 12px;
   text-align: center;
@@ -150,13 +149,13 @@ a {
   font-size: 12px;
   text-align: center;
   list-style: none;
-}
+}*/
 
-#my_portfolio_m {
+/*#my_portfolio_m {
   color: white;
   background: blue;
   margin: 0px 0px;
-}
+}*/
 
 
 

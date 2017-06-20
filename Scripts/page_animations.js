@@ -183,7 +183,7 @@ $(document).on('click', '#nav_proj_side_a', function() {
 
 //workarond for resizing project page widths -- on resize updates width
 $(window).resize( function() {
-	if ($('#project_content_view').width() > 0) {
+	if ($('#project_content_view').width() > 0 &&  (!screen_width_max.matches)) {
 		var content_width = $(window).width() - 120;
 		$('#project_content_view').css('height', '600px');
 		$('#project_content_view').css('width', content_width + 'px');
