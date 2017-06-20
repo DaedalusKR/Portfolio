@@ -198,6 +198,7 @@ a {
 
   #contact_box {
     opacity: 0;
+    padding-top: 20px;
     width: 20%;
     height: 325px;
     float: left;

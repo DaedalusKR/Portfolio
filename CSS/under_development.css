@@ -9,7 +9,7 @@
   font-size: 28px;
   text-shadow: 1px 1px 5px;
   position: relative;
-  width: 550px;
+  width: auto;
   margin: 0 auto;
   overflow: hidden;
 }
