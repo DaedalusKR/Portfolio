@@ -1,8 +1,10 @@
+var screen_width_max = window.matchMedia( "(max-width: 600px)" );
+
+
 function home_anims() {
 	$(document).ready(function(){
 			// checks if page vistied during session and sets animation based on last view
 
-		var screen_width_max = window.matchMedia( "(max-width: 600px)" );
 		if (screen_width_max.matches) { //simple anims for mobile
 
 			function name_type_mobile() {
@@ -70,15 +72,11 @@ function home_anims() {
 function project_anims() {
 	$(document).ready(function() {
 
-
-		var screen_width_max = window.matchMedia( "(max-width: 640px)" );
 		if (!screen_width_max.matches) { //simple anims for mobile
-
 			setTimeout(projects_anim_p4(), 1500); //switches to max width for nav bar
 
 			var last_visited = sessionStorage.getItem("last_page");
 			sessionStorage.setItem("last_page", "project");
-
 
 			function projects_anim_p1() {
 				//$('#portfolio_main_space_projects_light').animate({width: '20%'}, 250, projects_anim_p2());
@@ -189,7 +187,18 @@ $(window).resize( function() {
 		$('#project_content_view').css('width', content_width + 'px');
 		$('#project_content_view_spacer').animate({width: '0%'});
 		getContentPage(link_clicked);
-	 }
+	}
+});
+
+
+//refresh page on browser resize
+$(window).bind('resize', function(e)
+{
+  if (window.RT) clearTimeout(window.RT);
+  window.RT = setTimeout(function()
+  {
+    this.location.reload(false); /* false to get page from cache */
+  }, 100);
 });
 
 //ajax calls for project links
@@ -257,14 +266,3 @@ function getContentPage(link_clicked) {
 		break;
 	}
 }
-
-//$(document).ready(function() {
-	function expand_menu() {
-		$('#nav_proj_side').animate({width: '20%'});
-		// $('.menu_box').animate({left: '-75px'});
-
-
-
-	}
-
-//});
