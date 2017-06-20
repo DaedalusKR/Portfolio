@@ -2,7 +2,7 @@ function home_anims() {
 	$(document).ready(function(){
 			// checks if page vistied during session and sets animation based on last view
 
-		var screen_width_max = window.matchMedia( "(max-width: 750px)" );
+		var screen_width_max = window.matchMedia( "(max-width: 600px)" );
 		if (screen_width_max.matches) { //simple anims for mobile
 
 			function name_type_mobile() {
