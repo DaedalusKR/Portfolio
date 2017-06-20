@@ -121,7 +121,8 @@ a {
   opacity: 0;
   background: #149332;
   height: 0px;
-  width: 100%;
+  width: 0%;
+  display: none;
 }
 
 #project_content_view {
