@@ -1,4 +1,4 @@
-var screen_width_max = window.matchMedia( "(max-width: 600px)" );
+var screen_width_max = window.matchMedia( "(max-width: 736px)", "(max-device-width: 736px)" );
 
 
 function home_anims() {
@@ -194,11 +194,13 @@ $(window).resize( function() {
 //refresh page on browser resize
 $(window).bind('resize', function(e)
 {
-  if (window.RT) clearTimeout(window.RT);
-  window.RT = setTimeout(function()
-  {
-    this.location.reload(false); /* false to get page from cache */
-  }, 100);
+	if (!screen_width_max.matches) {
+	  if (window.RT) clearTimeout(window.RT);
+	  window.RT = setTimeout(function()
+	  {
+	    this.location.reload(false); /* false to get page from cache */
+	  }, 100);
+	}
 });
 
 //ajax calls for project links
