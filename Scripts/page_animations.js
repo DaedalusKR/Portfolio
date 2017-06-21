@@ -268,3 +268,13 @@ function getContentPage(link_clicked) {
 		break;
 	}
 }
+
+function send_message(message_body) {
+	$(document).ready(function(){
+		var build_email = new XMLHttpRequest();
+		build_email.open('GET', '../Scripts/email.php', true);
+		build_email.send();
+		alert('here');
+		return false;
+	});
+}
