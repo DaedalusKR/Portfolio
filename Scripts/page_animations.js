@@ -117,38 +117,36 @@ function project_anims() {
 function contact_anims() {
 	$(document).ready(function() {
 
-		//var last_visited = checkCookie();
-		var last_visited = sessionStorage.getItem("last_page");
-		sessionStorage.setItem("last_page", "contact");
+			var last_visited = sessionStorage.getItem("last_page");
+			sessionStorage.setItem("last_page", "contact");
 
-		if (last_visited == 'project') {
-			$('#portfolio_main_space_contact').css('width', '20%');
-			$('#portfolio_main_space_contact').animate({width: '100%'});
-		}
+			if (last_visited == 'project') {
+				$('#portfolio_main_space_contact').css('width', '20%');
+				$('#portfolio_main_space_contact').animate({width: '100%'});
+			}
 
-		function contact_bg_anim_ph1() {
-			$('#main_white_cover').height('0px');
-			//$('#light_green_cover').delay(0).animate({height: '275px'});//, contact_bg_anim_ph2());
-			$('#portfolio_main_space').delay(0).animate({height: '325px'}, contact_bg_anim_ph2());
-		}
+			function contact_bg_anim_ph1() {
+				$('#main_white_cover').height('0px');
+				$('#portfolio_main_space').delay(0).animate({height: '325px'}, contact_bg_anim_ph2());
+			}
 
-		function contact_bg_anim_ph2() {
-			$('#nav_list, #nav_logo, #footer_text').css({opacity: 1});
-			$('.form_input_field').hide();
-			$('.contact_label').hide();
-			$('.form_submit').hide();
-			$('.contact_message').hide();
-			$('.contact_form').animate({height: '225px'});
-			$('.contact_label').animate({opacity: 1});
-			$('.contact_label').fadeIn(200);
-			$('.form_input_field').animate({opacity: 1});
-			$('.form_input_field').fadeIn(400);
-			$('.contact_message').animate({opacity: 1});
-			$('.contact_message').fadeIn(800);
-			$('.form_submit').animate({opacity: 1});
-			$('.form_submit').fadeIn(800);//, setCookie('page', 'contact.html');
-		}
-		contact_bg_anim_ph1();
+			function contact_bg_anim_ph2() {
+				$('#nav_list, #nav_logo, #footer_text').css({opacity: 1});
+				$('.form_input_field').hide();
+				$('.contact_label').hide();
+				$('.form_submit').hide();
+				$('.contact_message').hide();
+				$('.contact_form').animate({height: '225px'});
+				$('.contact_label').animate({opacity: 1});
+				$('.contact_label').fadeIn(200);
+				$('.form_input_field').animate({opacity: 1});
+				$('.form_input_field').fadeIn(400);
+				$('.contact_message').animate({opacity: 1});
+				$('.contact_message').fadeIn(800);
+				$('.form_submit').animate({opacity: 1});
+				$('.form_submit').fadeIn(800);//, setCookie('page', 'contact.html');
+			}
+			contact_bg_anim_ph1();
 	});
 }
 
