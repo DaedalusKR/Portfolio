@@ -28,12 +28,13 @@
     <main id='portfolio_main_space_contact'>
       <div id='main_white_cover'></div>
       <div id='light_green_cover'>
-        <form class='contact_form' action='' method='post' name='contact_form' onsubmit='return false'>
+
+        <form class='contact_form' action='../Scripts/email.php' method='POST' name='contact_form'>
         	<label class='contact_label'>Contact Me</label><br><br>
-        	<input class='form_input_field' type='text' placeholder='Your Name'><br><br>
-          <input class='form_input_field' type='email'placeholder = 'Your E-mail'><br><br>
+        	<input class='form_input_field' type='text' placeholder='Your Name' name='sender_name'><br><br>
+          <input class='form_input_field' type='email' placeholder = 'Your E-mail' name='sender_email'><br><br>
           <textarea class='contact_message' placeholder="Your Message:" name='message_body_text'></textarea><br><br><br>
-          <input class='form_submit' type='submit' value='Submit' onclick='send_message()'>
+          <input class='form_submit' type='submit' name='Submit'>
         </form>
       </div>
     </main><div id='clear_fix'></div>

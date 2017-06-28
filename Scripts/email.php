@@ -1,9 +1,9 @@
 <?php
-echo "testing";
   $to = "ken@kenroberts.xyz";
-  $subject = "My subject";
-  $txt = $_POST['message_body_text']
-  $headers = "From: kr26633z@gmail.com";
-
-  mail($to,$subject,$txt,$headers);
+  $subject = "New Email - kenroberts.xyz";
+  $sender_name = $_POST['sender_name'];
+  $sender_email = $_POST['sender_email'];
+  $txt = $_POST['message_body_text'];
+  $headers = 'From: ' . $sender_email . ' < ' . $sender_name . '> ';
+  mail($to,$subject,$txt, $headers);
 ?>
