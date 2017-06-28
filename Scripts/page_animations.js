@@ -21,6 +21,7 @@ function home_anims() {
 			}
 
 			name_type_mobile();
+
 		} else {
 			var last_visited = sessionStorage.getItem("last_page");
 			sessionStorage.setItem("last_page", "home");
