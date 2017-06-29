@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+body {
+    min-height: 100%;
+
+}
+
 a {
   color: white;
   text-decoration: none;
@@ -111,7 +116,7 @@ a {
 
 #portfolio_main_space {
   width: 100%;
-  height: auto;
+  min-height: 500px;
   background: green;
   color: white;
   float: right;
@@ -127,7 +132,7 @@ a {
 
 #project_content_view {
   width: 100%;
-  height: auto;
+  min-height: auto;
   background: green;
   /*float: right;*/
 }
@@ -306,3 +311,4 @@ a {
 #clear_fix {
   clear: both;
 }
+
