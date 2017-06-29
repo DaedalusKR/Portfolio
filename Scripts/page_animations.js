@@ -7,7 +7,7 @@ function home_anims() {
 
 		if (screen_width_max.matches) { //simple anims for mobile
 			viewport_height = $(window).height() - 200 - 20 - 50;
-			$('#portfolio_main_space').css('height', viewport_height); 			
+			$('#portfolio_main_space').css('height', viewport_height);
 
 			function name_type_mobile() {
 				var name = $('#name_area').data('text');
@@ -75,6 +75,9 @@ function home_anims() {
 function project_anims() {
 	$(document).ready(function() {
 
+		var viewport_height = $(window).height() - 50 - 20;
+		$('#project_content_view').css('min-height', viewport_height);
+
 		if (!screen_width_max.matches) { //simple anims for mobile
 			setTimeout(projects_anim_p4(), 1500); //switches to max width for nav bar
 
@@ -119,6 +122,8 @@ function project_anims() {
 
 function contact_anims() {
 	$(document).ready(function() {
+		var viewport_height = $(window).height() + 50 + 20;
+		$('#portfolio_main_space_contact').css('height', viewport_height);
 
 			var last_visited = sessionStorage.getItem("last_page");
 			sessionStorage.setItem("last_page", "contact");
@@ -193,10 +198,32 @@ $(window).resize( function() {
 
 
 //refresh page on browser resize
-$(window).bind('resize', function(e)
-{
-			viewport_height = $(window).height() - 200 - 20 - 50;
-			$('#portfolio_main_space').css('min-height', viewport_height); 	
+$(window).bind('resize', function(e) {
+	//get current page
+	var path = window.location.pathname;
+	var current_page = path.split('/').pop();
+
+	switch (current_page) {
+		case 'index.html':
+			var viewport_height = $(window).height() - 200 - 20 - 50;
+			$('#portfolio_main_space').css('min-height', viewport_height);
+			break;
+		case 'projects.html':
+			var viewport_height = $(window).height() - 50 - 20;
+			$('#project_content_view').css('min-height', viewport_height);
+			break;
+		case 'contact.html':
+			var viewport_height = $(window).height() + 50 + 20;
+			$('#portfolio_main_space_contact').css('min-height', viewport_height);
+
+			break;
+		default:
+			break;
+
+	}
+
+	// viewport_height = $(window).height() - 200 - 20 - 50;
+	// $('#portfolio_main_space').css('min-height', viewport_height);
 	if (!screen_width_max.matches) {
 	  if (window.RT) clearTimeout(window.RT);
 	  window.RT = setTimeout(function()
@@ -277,8 +304,6 @@ function send_message(message_body) {
 		var build_email = new XMLHttpRequest();
 		build_email.open('GET', '../Scripts/email.php', true);
 		build_email.send();
-		alert('here');
 		return false;
 	});
 }
-
