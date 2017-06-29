@@ -6,6 +6,8 @@ function home_anims() {
 			// checks if page vistied during session and sets animation based on last view
 
 		if (screen_width_max.matches) { //simple anims for mobile
+			viewport_height = $(window).height() - 200 - 20 - 50;
+			$('#portfolio_main_space').css('height', viewport_height); 			
 
 			function name_type_mobile() {
 				var name = $('#name_area').data('text');
@@ -193,6 +195,8 @@ $(window).resize( function() {
 //refresh page on browser resize
 $(window).bind('resize', function(e)
 {
+			viewport_height = $(window).height() - 200 - 20 - 50;
+			$('#portfolio_main_space').css('min-height', viewport_height); 	
 	if (!screen_width_max.matches) {
 	  if (window.RT) clearTimeout(window.RT);
 	  window.RT = setTimeout(function()
@@ -277,3 +281,4 @@ function send_message(message_body) {
 		return false;
 	});
 }
+
