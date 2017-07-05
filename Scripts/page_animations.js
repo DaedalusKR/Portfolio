@@ -1,11 +1,12 @@
 var screen_width_max = window.matchMedia( "(max-width: 736px)", "(max-device-width: 736px)" );
 
-
 function home_anims() {
 	$(document).ready(function(){
 			// checks if page vistied during session and sets animation based on last view
 
 		if (screen_width_max.matches) { //simple anims for mobile
+			viewport_height = $(window).height() - 200 - 20 - 50;
+			$('#portfolio_main_space').css('height', viewport_height);
 
 			function name_type_mobile() {
 				var name = $('#name_area').data('text');
@@ -25,6 +26,9 @@ function home_anims() {
 		} else {
 			var last_visited = sessionStorage.getItem("last_page");
 			sessionStorage.setItem("last_page", "home");
+
+
+
 
 			function home_anim_p1() {
 				if (!last_visited) {
@@ -46,6 +50,7 @@ function home_anims() {
 				}
 			}
 
+
 			function home_anim_p3() {
 				var name = $('#name_area').data('text');
 				type_writer_effect_name(name, 0);
@@ -64,14 +69,35 @@ function home_anims() {
 				$('.article_text').delay(750).animate({opacity: '1'}, 1000);
 			}
 
+			// alert(sessionStorage.getItem('home_anim_run'));
+			if (sessionStorage.getItem("home_anim_played") == null) {
 
-			home_anim_p1();
+				home_anim_p1();
+			} else {
+				var viewport_height = $(window).height() - 200 - 20 - 50;
+				$('#portfolio_main_space').css({'height': viewport_height, 'width': '100%'});
+				$('#main_white_cover').css('width', '0px');
+				$('#nav_bar').css('width', '100%');
+				$('#nav_list').css('opacity', '1');
+				$('#home_footer').css({'opacity': '1', 'width': '100%'});
+				$('#light_green_cover').removeClass('light_green_anim').css('height', '275px');
+				$('#portfolio_main_space').removeClass('port_main_dark_green_anim').css('height', '325px');
+				$('#name_area').html('Ken Roberts');
+				$('#role_area').html('Web Developer');
+				$('#contact_box').css('opacity', '1');
+				$('.article_headings').css('opacity', '1');
+				$('.article_text').css('opacity', '1');
+			}
+				sessionStorage.setItem("home_anim_played", "Yes");
 		}
 	});
 }
 
 function project_anims() {
 	$(document).ready(function() {
+
+		var viewport_height = $(window).height() - 50 - 20;
+		$('#project_content_view').css('min-height', viewport_height);
 
 		if (!screen_width_max.matches) { //simple anims for mobile
 			setTimeout(projects_anim_p4(), 1500); //switches to max width for nav bar
@@ -117,6 +143,8 @@ function project_anims() {
 
 function contact_anims() {
 	$(document).ready(function() {
+		var viewport_height = $(window).height() + 50 + 20;
+		$('#portfolio_main_space_contact').css('height', viewport_height);
 
 			var last_visited = sessionStorage.getItem("last_page");
 			sessionStorage.setItem("last_page", "contact");
@@ -191,8 +219,32 @@ $(window).resize( function() {
 
 
 //refresh page on browser resize
-$(window).bind('resize', function(e)
-{
+$(window).bind('resize', function(e) {
+	//get current page
+	var path = window.location.pathname;
+	var current_page = path.split('/').pop();
+
+	switch (current_page) {
+		case 'index.html':
+			var viewport_height = $(window).height() - 200 - 20 - 50;
+			$('#portfolio_main_space').css('min-height', viewport_height);
+			break;
+		case 'projects.html':
+			var viewport_height = $(window).height() - 50 - 20;
+			$('#project_content_view').css('min-height', viewport_height);
+			break;
+		case 'contact.html':
+			var viewport_height = $(window).height() + 50 + 20;
+			$('#portfolio_main_space_contact').css('min-height', viewport_height);
+
+			break;
+		default:
+			break;
+
+	}
+
+	// viewport_height = $(window).height() - 200 - 20 - 50;
+	// $('#portfolio_main_space').css('min-height', viewport_height);
 	if (!screen_width_max.matches) {
 	  if (window.RT) clearTimeout(window.RT);
 	  window.RT = setTimeout(function()
@@ -273,7 +325,6 @@ function send_message(message_body) {
 		var build_email = new XMLHttpRequest();
 		build_email.open('GET', '../Scripts/email.php', true);
 		build_email.send();
-		alert('here');
 		return false;
 	});
 }

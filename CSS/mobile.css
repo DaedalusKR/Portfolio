@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+body {
+    min-height: 100%;
+
+}
+
 a {
   color: white;
   text-decoration: none;
@@ -103,15 +108,15 @@ a {
   float: left;
 }
 
-#light_green_cover {
+/*#light_green_cover {
   width: 100%;
   height: 200px;
   background: #149332;
-}
+}*/
 
 #portfolio_main_space {
   width: 100%;
-  height: auto;
+  min-height: 500px;
   background: green;
   color: white;
   float: right;
@@ -127,8 +132,8 @@ a {
 
 #project_content_view {
   width: 100%;
-  height: auto;
-  background: green;
+  min-height: auto;
+  background: #149332;
   /*float: right;*/
 }
 
@@ -219,7 +224,8 @@ a {
 
 #portfolio_main_space_contact {
   width: 100%;
-  height: auto;
+  min-height: auto;
+  height: 10px;
   background: green;
   color: white;
   float: left;
@@ -227,7 +233,7 @@ a {
 
 #light_green_cover {
   background: #149332;
-  height: 200px;
+  height: 275px;
   width: 100%;
   /*animation-name: light_green_in;
   animation-delay: 0.5s;
