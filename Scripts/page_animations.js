@@ -330,6 +330,36 @@ function send_email() {
 			if (build_email.readyState == 4 && build_email.status == 200) {
 				// alert(build_email.responseText);
 				// show sent confirmation
+				$('.contact_form').animate({height: '0px'});
+				$('.contact_label').animate({opacity:0});
+				$('.contact_label').fadeOut(200);
+				$('.form_input_field').animate({opacity: 0});
+				$('.form_input_field').fadeOut(400);
+				$('.contact_message').animate({opacity: 0});
+				$('.contact_message').fadeOut(800);
+				$('.form_submit').animate({opacity: 0});
+				$('.form_submit').fadeOut(800);
+
+				$('.form_input_field').hide();
+				$('.contact_label').hide();
+				$('.form_submit').hide();
+				$('.contact_message').hide();
+				$('.contact_form').animate({height: '225px'});
+				$('.contact_label').animate({opacity: 1});
+				$('.contact_label').fadeIn(800);
+				$('.form_input_field').animate({opacity: 1});
+				$('.form_input_field').fadeIn(1000);
+				$('#sender_name').val('');
+				$('#sender_address').val('');
+
+				//clear message box
+
+				$('.contact_message').animate({opacity: 1});
+				$('.contact_message').fadeIn(1200);
+				$('.form_submit').animate({opacity: 1});
+				$('.form_submit').fadeIn(1400);//, setCookie('page', 'contact.html');
+
+
 
 			}
 		}
