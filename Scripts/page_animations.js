@@ -320,11 +320,21 @@ function getContentPage(link_clicked) {
 	}
 }
 
-function send_message(message_body) {
+function send_email() {
 	$(document).ready(function(){
+		var contact_form = document.getElementById('contact_form_id');
+		var form_data = new FormData(contact_form);
 		var build_email = new XMLHttpRequest();
-		build_email.open('GET', '../Scripts/email.php', true);
-		build_email.send();
+
+		build_email.onreadystatechange = function() {
+			if (build_email.readyState == 4 && build_email.status == 200) {
+				// alert(build_email.responseText);
+				// show sent confirmation
+
+			}
+		}
+		build_email.open('POST', '../Scripts/email.php', true);
+		build_email.send(form_data);
 		return false;
 	});
 }
