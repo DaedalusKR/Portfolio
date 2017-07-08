@@ -2,93 +2,19 @@ var screen_width_max = window.matchMedia( "(max-width: 736px)", "(max-device-wid
 
 function home_anims() {
 	$(document).ready(function(){
-			// checks if page vistied during session and sets animation based on last view
-
-		if (screen_width_max.matches) { //simple anims for mobile
-			viewport_height = $(window).height() - 200 - 20 - 50;
-			$('#portfolio_main_space').css('height', viewport_height);
-
-			function name_type_mobile() {
-				var name = $('#name_area').data('text');
-				type_writer_effect_name(name, 0);
-				setTimeout(function() {
-					role_type_mobile();
-				}, 1000);
-			}
-
-			function role_type_mobile() {
-				var role = $('#role_area').data('text');
-				type_writer_effect_role(role, 0);
-			}
-
-			name_type_mobile();
-
+		//controls animation to play - small/large/large-static
+		if (screen_width_max.matches) {
+			//small screen
+			$('#portfolio_main_space').css('height', $(window).height() - 200 - 20 - 50);
+			typewrite_name_role();
 		} else {
-			var last_visited = sessionStorage.getItem("last_page");
-			sessionStorage.setItem("last_page", "home");
-
-
-
-
-			function home_anim_p1() {
-				if (!last_visited) {
-					$('#nav_bar').animate({width: '100%'}, 500);
-					$('#nav_list').animate({opacity: '1'}, 2500); //high duration to offset 0 to 1 speed
-					$('#portfolio_main_space').animate({width: '100%'}, 500);
-					$('#main_white_cover').animate({width: '0%'}, 500);
-					$('#home_footer').animate({width: '100%'}, 500);
-					setTimeout(function() {home_anim_p3()}, 1500);
-					setTimeout(function() {home_anim_p4()}, 2000);
-				} else {
-					$('#nav_bar').css('width', '100%');
-					$('#portfolio_main_space').animate({width: '100%'}, 500);
-					$('#main_white_cover').animate({width: '0%'}, 500);
-					$('#home_footer').css('width', '100%');
-					$('#nav_list, #nav_logo, #footer_text').css('opacity', '1');
-					setTimeout(function() {home_anim_p3()}, 1500);
-					setTimeout(function() {home_anim_p4()}, 2000);
-				}
-			}
-
-
-			function home_anim_p3() {
-				var name = $('#name_area').data('text');
-				type_writer_effect_name(name, 0);
-			}
-
-			function home_anim_p4() {
-				var role = $('#role_area').data('text');
-				type_writer_effect_role(role, 0);
-				setTimeout(home_anim_p5());
-			}
-
-			function home_anim_p5() {
-				$('#about_me').animate({height: '325px'});
-				$('.article_headings').delay(750).animate({opacity: '1'}, 1000);
-				$('#contact_box').delay(1000).animate({opacity: '1'}, 1000);
-				$('.article_text').delay(750).animate({opacity: '1'}, 1000);
-			}
-
-			// alert(sessionStorage.getItem('home_anim_run'));
+			//animate or static
 			if (sessionStorage.getItem("home_anim_played") == null) {
-
-				home_anim_p1();
+				large_screen_home_anims();
 			} else {
-				var viewport_height = $(window).height() - 200 - 20 - 50;
-				$('#portfolio_main_space').css({'height': viewport_height, 'width': '100%'});
-				$('#main_white_cover').css('width', '0px');
-				$('#nav_bar').css('width', '100%');
-				$('#nav_list').css('opacity', '1');
-				$('#home_footer').css({'opacity': '1', 'width': '100%'});
-				$('#light_green_cover').removeClass('light_green_anim').css('height', '275px');
-				$('#portfolio_main_space').removeClass('port_main_dark_green_anim').css('height', '325px');
-				$('#name_area').html('Ken Roberts');
-				$('#role_area').html('Web Developer');
-				$('#contact_box').css('opacity', '1');
-				$('.article_headings').css('opacity', '1');
-				$('.article_text').css('opacity', '1');
+				large_screen_home_anims_static();
 			}
-				sessionStorage.setItem("home_anim_played", "Yes");
+			sessionStorage.setItem("home_anim_played", "Yes");
 		}
 	});
 }
@@ -353,4 +279,54 @@ function contact_form_reset() {
 	$('.contact_message').val('');
 	$('.contact_message').animate({opacity: 1});
 	$('.form_submit').animate({opacity: 1});
+}
+
+function typewrite_name_role() {
+	var name = $('#name_area').data('text');
+	type_writer_effect_name(name, 0);
+	setTimeout(function() {
+		var role = $('#role_area').data('text');
+		type_writer_effect_role(role, 0);
+	}, 500);
+}
+
+function large_screen_home_anims() {
+	var last_visited = sessionStorage.getItem("last_page");
+	sessionStorage.setItem("last_page", "home");
+	if (!last_visited) {
+		$('#nav_bar').animate({width: '100%'}, 500);
+		$('#nav_list').animate({opacity: '1'}, 2500); //high duration to offset 0 to 1 speed
+		$('#portfolio_main_space').animate({width: '100%'}, 500);
+		$('#main_white_cover').animate({width: '0%'}, 500);
+		$('#home_footer').animate({width: '100%'}, 500);
+		setTimeout(function() {typewrite_name_role()}, 1500);
+		setTimeout(function() {home_anim_p4()}, 2000);
+		$('#about_me').animate({height: '325px'});
+		$('.article_headings').delay(2750).animate({opacity: '1'}, 1000);
+		$('#contact_box').delay(3000).animate({opacity: '1'}, 1000);
+		$('.article_text').delay(2750).animate({opacity: '1'}, 1000);
+	} else {
+		$('#nav_bar').css('width', '100%');
+		$('#portfolio_main_space').animate({width: '100%'}, 500);
+		$('#main_white_cover').animate({width: '0%'}, 500);
+		$('#home_footer').css('width', '100%');
+		$('#nav_list, #nav_logo, #footer_text').css('opacity', '1');
+		setTimeout(function() {typewrite_name_role()}, 1500);
+	}
+}
+
+function large_screen_home_anims_static() {
+	var viewport_height = $(window).height() - 200 - 20 - 50;
+	$('#portfolio_main_space').css({'height': viewport_height, 'width': '100%'});
+	$('#main_white_cover').css('width', '0px');
+	$('#nav_bar').css('width', '100%');
+	$('#nav_list').css('opacity', '1');
+	$('#home_footer').css({'opacity': '1', 'width': '100%'});
+	$('#light_green_cover').removeClass('light_green_anim').css('height', '275px');
+	$('#portfolio_main_space').removeClass('port_main_dark_green_anim').css('height', '325px');
+	$('#name_area').html('Ken Roberts');
+	$('#role_area').html('Web Developer');
+	$('#contact_box').css('opacity', '1');
+	$('.article_headings').css('opacity', '1');
+	$('.article_text').css('opacity', '1');
 }
