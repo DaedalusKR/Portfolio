@@ -21,34 +21,23 @@ function home_anims() {
 
 function project_anims() {
 	$(document).ready(function() {
+		var last_visited = sessionStorage.getItem("last_page");
+		sessionStorage.setItem("last_page", "project");
+		$('#project_content_view').css('min-height', $(window).height() - 50 - 20);
 
-		var viewport_height = $(window).height() - 50 - 20;
-		$('#project_content_view').css('min-height', viewport_height);
-
-		if (!screen_width_max.matches) { //simple anims for mobile
-			setTimeout(projects_anim_p4(), 1500); //switches to max width for nav bar
-
-			var last_visited = sessionStorage.getItem("last_page");
-			sessionStorage.setItem("last_page", "project");
-
-			function projects_anim_p1() {
-				//$('#portfolio_main_space_projects_light').animate({width: '20%'}, 250, projects_anim_p2());
-				$('.portfolio_main_space_projects_dark').animate({width: '120px'}, 250, projects_anim_p2());
-			}
-
-			function projects_anim_p2() {
-				$('#portfolio_main_space_projects_light').animate({height: '0px'}, 0);
-				$('.portfolio_main_space_projects_dark').animate({height: '600px'}, 0, projects_anim_p3());//, setCookie('page', 'project.html'), projects_anim_p3());
+		if (!screen_width_max.matches) { //large devices
+			setTimeout(projects_nav_max_set(), 1500); //switches to max width for nav bar
+				//run large device project animations
+			function animate_projects_page() {
+				$('.portfolio_main_space_projects_dark').animate({width: '120px'});
+				$('#portfolio_main_space_projects_light').delay(250).animate({height: '0px'});
+				$('.portfolio_main_space_projects_dark').animate({height: '600px'});
 				$('#nav_list, #nav_logo, #footer_text').css({opacity: 1});
+				$('#nav_proj_side_container').delay(750).animate({opacity: '1'}, 750);
+				$('#project_content_view_spacer').delay(250).animate({width: '80%'}, 0);
 			}
-
-			function projects_anim_p3() {
-				$('#nav_proj_side_container').delay(500).animate({opacity: '1'}, 750);
-				$('#project_content_view_spacer').delay(0).animate({width: '80%'}, 0);
-
-			}
-
-			function projects_anim_p4() {
+				//replace side bar with fixed width
+			function projects_nav_max_set() {
 				$('.portfolio_main_space_projects_dark').addClass('portfolio_main_space_projects_dark_max_h');
 				var link_clicked = $(this).text();
 				var content_width = $(window).width() - 120;
@@ -56,14 +45,12 @@ function project_anims() {
 				$('#project_content_view').delay(0).animate({width: content_width + 'px'});
 				$('#project_content_view_spacer').delay(0).animate({width: '0%'});
 				getContentPage('My Portfolio');
-
 			}
-
 		} else {
+				//insert pages for each project as an ajax insert
 			$('#my_portfolio_m').load('Projects/myportfolio.html');
 		}
-
-		projects_anim_p1();
+		animate_projects_page();
 	});
 }
 
