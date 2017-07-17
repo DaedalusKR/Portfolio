@@ -73,7 +73,7 @@ function contact_anims() {
 			}
 
 			function contact_bg_anim_ph2() {
-				$('#nav_list, #nav_logo, #footer_text').css({opacity: 1});
+				$('#nav_list, #nav_logo, #footer_text').css({opacit y: 1});
 				$('.form_input_field').hide();
 				$('.contact_label').hide();
 				$('.form_submit').hide();
