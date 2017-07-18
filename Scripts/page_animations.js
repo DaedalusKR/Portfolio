@@ -55,44 +55,39 @@ function project_anims() {
 }
 
 function contact_anims() {
-	$(document).ready(function() {
-		var viewport_height = $(window).height() + 50 + 20;
-		$('#portfolio_main_space_contact').css('height', viewport_height);
-
-			var last_visited = sessionStorage.getItem("last_page");
-			sessionStorage.setItem("last_page", "contact");
-
-			if (last_visited == 'project') {
-				$('#portfolio_main_space_contact').css('width', '20%');
-				$('#portfolio_main_space_contact').animate({width: '100%'});
-			}
-
-			function contact_bg_anim_ph1() {
-				$('#main_white_cover').height('0px');
-				$('#portfolio_main_space').delay(0).animate({height: '325px'}, contact_bg_anim_ph2());
-			}
-
-			function contact_bg_anim_ph2() {
-				$('#nav_list, #nav_logo, #footer_text').css({opacity: 1});
-				$('.form_input_field').hide();
-				$('.contact_label').hide();
-				$('.form_submit').hide();
-				$('.contact_message').hide();
-				$('.contact_form').animate({height: '225px'});
-				$('.contact_label').animate({opacity: 1});
-				$('.contact_label').fadeIn(200);
-				$('.form_input_field').animate({opacity: 1});
-				$('.form_input_field').fadeIn(400);
-				$('.contact_message').animate({opacity: 1});
-				$('.contact_message').fadeIn(800);
-				$('.form_submit').animate({opacity: 1});
-				$('.form_submit').fadeIn(800);//, setCookie('page', 'contact.html');
-			}
-			contact_bg_anim_ph1();
+	$(document).ready(function() { //when ready animate contact page
+		$('#portfolio_main_space_contact').css('height', $(window).height() + 50 + 20);
+		var last_visited = sessionStorage.getItem("last_page");
+		sessionStorage.setItem("last_page", "contact");
+			//seamless animation if projcets page was last visited
+		if (last_visited == 'project') {
+			$('#portfolio_main_space_contact').css('width', '20%');
+			$('#portfolio_main_space_contact').animate({width: '100%'});
+		}
+			//standard animation sequence for contact page
+		function animate_contacts_page() {
+			$('#main_white_cover').height('0px');
+			$('#portfolio_main_space').delay(0).animate({height: '325px'});
+			$('#nav_list, #nav_logo, #footer_text').css({opacity: 1});
+			$('.form_input_field').hide();
+			$('.contact_label').hide();
+			$('.form_submit').hide();
+			$('.contact_message').hide();
+			$('.contact_form').animate({height: '225px'});
+			$('.contact_label').animate({opacity: 1});
+			$('.contact_label').fadeIn(200);
+			$('.form_input_field').animate({opacity: 1});
+			$('.form_input_field').fadeIn(400);
+			$('.contact_message').animate({opacity: 1});
+			$('.contact_message').fadeIn(800);
+			$('.form_submit').animate({opacity: 1});
+			$('.form_submit').fadeIn(800);//, setCookie('page', 'contact.html');
+		}
+		animate_contacts_page();
 	});
 }
 
-//project subpages glide in
+	//when project side bar item clicked slide in the projects view
 $(document).on('click', '#nav_proj_side_a', function() {
 	var link_clicked = $(this).text();
 	var content_width = $(window).width() - 120;
@@ -101,15 +96,13 @@ $(document).on('click', '#nav_proj_side_a', function() {
 		$('#project_content_view').animate({width: content_width + 'px'});
 		$('#project_content_view_spacer').animate({width: '0%'});
 		getContentPage(link_clicked);
-	 }
-	else {
+	 } else {
 		$('#project_content_view').animate({width: '0%'});
 		$('#project_content_view_screens').css('opacity', '0');
 		$('#project_content_view_title').css('opacity', '0');
 		$('#project_content_view_heading_dev').css('opacity', '0');
 		$('#project_content_view').css('height', '600px');
 		$('#project_content_view_spacer').css('width', '0%');
-
 		setTimeout(function() {
 			$('#project_content_view_spacer').animate({width: '0%'});
 			$('#project_content_view').css('height', '600px');
@@ -119,7 +112,7 @@ $(document).on('click', '#nav_proj_side_a', function() {
 	}
 });
 
-//workarond for resizing project page widths -- on resize updates width
+	//workarond for resizing project page widths -- on resize updates width
 $(window).resize( function() {
 	if ($('#project_content_view').width() > 0 &&  (!screen_width_max.matches)) {
 		var content_width = $(window).width() - 120;
@@ -130,14 +123,12 @@ $(window).resize( function() {
 	}
 });
 
-
-//refresh page on browser resize
+	//check and set height on browser resize
 $(window).bind('resize', function(e) {
-	//get current page
-	var path = window.location.pathname;
-	var current_page = path.split('/').pop();
-
-	switch (current_page) {
+		//if window is resized then get the current page name of the stack
+		//depending on current page in window set the height of background Div
+		//the height depends on what is on the page i.e half splits, footers.
+	switch (window.location.pathname.path.split('/').pop()) {
 		case 'index.html':
 			var viewport_height = $(window).height() - 200 - 20 - 50;
 			$('#portfolio_main_space').css('min-height', viewport_height);
@@ -149,15 +140,11 @@ $(window).bind('resize', function(e) {
 		case 'contact.html':
 			var viewport_height = $(window).height() + 50 + 20;
 			$('#portfolio_main_space_contact').css('min-height', viewport_height);
-
 			break;
 		default:
 			break;
-
 	}
 
-	// viewport_height = $(window).height() - 200 - 20 - 50;
-	// $('#portfolio_main_space').css('min-height', viewport_height);
 	if (!screen_width_max.matches) {
 	  if (window.RT) clearTimeout(window.RT);
 	  window.RT = setTimeout(function()
@@ -167,7 +154,7 @@ $(window).bind('resize', function(e) {
 	}
 });
 
-//ajax calls for project links
+	//get page for selected link and insert using ajax call
 function getContentPage(link_clicked) {
 	var xhttp = new XMLHttpRequest();
 
@@ -233,12 +220,15 @@ function getContentPage(link_clicked) {
 	}
 }
 
+	//
 function send_email() {
+		//get form data using FormData object, buold ajax object and when ready
+		//send a post request to the php script to generate the email
+		//on success replay the contact form show animation
 	$(document).ready(function(){
 		var contact_form = document.getElementById('contact_form_id');
 		var form_data = new FormData(contact_form);
 		var build_email = new XMLHttpRequest();
-
 		build_email.onreadystatechange = function() {
 			if (build_email.readyState == 4 && build_email.status == 200) {
 				contact_form_reset();
@@ -250,6 +240,7 @@ function send_email() {
 	});
 }
 
+	//contact box animation -- called when email sent successfully
 function contact_form_reset() {
 	$('.contact_form').animate({height: '0px'});
 	$('.contact_label').animate({opacity:0});
@@ -269,6 +260,7 @@ function contact_form_reset() {
 }
 
 function typewrite_name_role() {
+		//get text data in the name and role area div and send this to type script
 	var name = $('#name_area').data('text');
 	type_writer_effect_name(name, 0);
 	setTimeout(function() {
@@ -277,6 +269,7 @@ function typewrite_name_role() {
 	}, 500);
 }
 
+	//home page animations for large screen devices
 function large_screen_home_anims() {
 	var last_visited = sessionStorage.getItem("last_page");
 	sessionStorage.setItem("last_page", "home");
@@ -302,6 +295,7 @@ function large_screen_home_anims() {
 	}
 }
 
+	//home page static animation -- used when visited and don't want to rerun
 function large_screen_home_anims_static() {
 	var viewport_height = $(window).height() - 200 - 20 - 50;
 	$('#portfolio_main_space').css({'height': viewport_height, 'width': '100%'});
